@@ -1,0 +1,515 @@
+@use 'reset' as *;
+@use 'mixins' as *;
+@use './common' as *;
+
+
+
+
+
+// ⬇️ INTRO ⬇️
+
+.intro {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background-primary);
+    position: relative;
+    @include flex (row, wrap, center, flex-end);
+    overflow: hidden;
+    &__content {
+        @include flex (row, wrap, center, center);
+        gap: 4rem;
+    }
+    &__image {
+        margin-top: 8rem;
+        min-width: 200px;
+        max-width: 500px;
+        pointer-events: none;
+        position: relative;
+        top: 3rem;
+        animation: fade 1s ease 1 ;
+
+    }
+    &__spiral {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: center;
+        animation: spiralLoop 4s linear infinite;
+    }
+    &__comment {
+        position: absolute;
+        z-index: 2;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        transition: 0.2s;
+        animation: opacityInt 2s infinite ease-in-out;
+    }
+}
+
+@keyframes spiralLoop {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.3);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes opacityInt {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+// ⬇️ ABOUT ⬇️
+
+.about {
+    width: 100%;
+    padding: 15rem 0 7rem 0;
+    @include flex (row, wrap, flex-start, center);
+    &__content {
+        @include flex (column, wrap, center, flex-start);
+        text-align: center;
+        margin: 0 auto;
+        width: 50%;
+        max-width: 650px;
+    }
+    &__title {
+        color: grey;
+        margin-bottom: 1rem;
+        text-align: left;
+        position: relative;
+        left: 3rem;
+        transition: 1s;
+    }
+    &__p {
+        text-align: left;
+        position: relative;
+        left: -3rem;
+        transition: 0.5s;
+    }
+    &.active {
+        .about {
+            &__title {
+                left: 0;
+            }
+            &__p {
+                left: 0;
+            }
+        }
+    }
+}
+
+
+// ⬇️ FEATURED ⬇️
+
+.featured {
+    width: 100%;
+    padding: 8rem 0 15rem 0;
+    @include flex (row, wrap, center, center);
+    &__content {
+        @include flex (column, wrap, center, center);
+        gap: 2rem;
+        position: relative;
+        margin: 0 auto;
+        width: 55%;
+        max-width: 800px;
+    }
+    &__gallery {
+        @include flex (row, wrap, center, center);
+        gap: 2rem;
+        position: relative;
+        height: 70vh;
+    }
+    &__col {
+        @include flex (column, nowrap, space-between, space-between);
+        height: 100%;
+        gap: 2rem;
+        flex: 1;
+        width: 100%;
+        position: relative;
+    }
+    &__item {
+        flex: 1;
+        width: 100%;
+        background-color: green;
+        overflow: hidden;
+        @include flex (column, nowrap, center, center);
+        position: relative;
+        transition: 1s;
+        opacity:0;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            @include flex (column, nowrap, center, center);
+            background-color: #16191c95;
+            color: white;
+            pointer-events: none;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        &:hover {
+            .featured__img{
+                transform: scale(1.2);
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    &__title {
+        color: grey;
+        display: block;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        bottom: -3rem;
+        left: -4rem;
+        transition: bottom 2s;
+    }
+    &__img {
+        object-fit: cover;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        position: relative;
+        transition: 0.5s;
+    }
+    &.active {
+        .featured {
+            &__title {
+                bottom: 0;
+            }
+            &__item {
+                opacity: 1;
+            }
+        }
+        .item {
+            &__icons {
+                animation: left-right 1s ease 1, opacity 1s ease 1;
+            }
+            &__underground {
+                animation: right-left 1s ease 1, opacity 1s ease 1;
+            }
+            &__google {
+                animation: right-left 1s ease 1, opacity 1s ease 1;
+            }
+        }
+    }
+}
+.item {
+    &__icons {
+        background-color: #ad487a;
+        &:after {
+            content: 'Icon set and Guidelines';
+        }
+    }
+    &__underground {
+        background-color: #ADD1D3;
+        transition-delay: 0.2s;
+        &:after {
+            content: 'Underground App';
+        }
+    }
+    &__google {
+        background-color: #EFEFEF;
+        transition-delay: 0.2s;
+        &:after {
+            content: 'Google Copycat';
+        }
+    }
+}
+
+
+
+
+// ⬇️ ILLUSTRATION ⬇️
+
+.illustration {
+    width: 100%;
+    padding: 8rem 0 15rem 0;
+    @include flex (row, wrap, center, center);
+    &__content {
+        @include flex (column, wrap, center, center);
+        gap: 2rem;
+        position: relative;
+        margin: 0 auto;
+        width: 55%;
+        max-width: 1000px;
+    }
+    &__gallery {
+        @include flex (row, wrap, center, center);
+        gap: 2rem;
+        position: relative;
+        width: 50%;
+    }
+    &__col {
+        @include flex (column, nowrap, space-between, space-between);
+        height: 100%;
+        gap: 2rem;
+        position: relative;
+    }
+    &__item {
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+        @include flex (column, nowrap, center, center);
+        position: relative;
+        transition: 1s;
+        opacity:0;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            @include flex (column, nowrap, center, center);
+            background-color: #16191c95;
+            color: white;
+            pointer-events: none;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        &:hover {
+            .illustration__img{
+                transform: scale(1.2);
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    &__title {
+        color: grey;
+        display: block;
+        position: absolute;
+        top: -4rem;
+        left: 0;
+        transition: bottom 2s;
+    }
+    &__img {
+        object-fit: cover;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        position: relative;
+        transition: 0.5s;
+    }
+    &.active {
+        .illustration {
+            &__title {
+                bottom: 0;
+            }
+            &__item {
+                left: 0;
+                opacity: 1;
+            }
+        }
+    }
+}
+.item {
+    &__floyd {
+        left: -3rem;
+        &:after {
+            content: 'Pink Floyd Illustrations';
+        }
+    }
+    &__notnoise {
+        left: 3rem;
+        transition-delay: 0.2s;
+        &:after {
+            content: 'Notnoise Studio Brand';
+        }
+    }
+}
+
+
+
+// ⬇️ EXPERIENCE ⬇️
+
+.experience {
+    width: 100%;
+    padding-bottom: 15rem ;
+    @include flex (column, wrap, center, center);
+    &__content {
+        @include flex (row,nowrap, center, flex-start);
+        gap: 2rem;
+        position: relative;
+        margin: 0 auto;
+        width: 65%;
+        max-width: 1000px;
+    }
+    &__col {
+        @include flex (column, wrap, flex-start, center);
+        flex: 1;
+    }
+    &__icon {
+        width: 32px;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    &__title {
+        margin-top: 0.5rem;
+        color: grey;
+        margin-bottom: 1rem;
+        position: relative;
+        opacity: 0;
+        transition: 1s;
+    }
+    &__li {
+        font-size: 1rem;
+        text-align: center;
+        position: relative;
+        opacity: 0;
+        transition: 1s;
+    }
+    &__container {
+        width: 100%;
+        @include flex (column, wrap, center, center);
+    }
+    &__button {
+        margin-top: 5rem;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 1s, color 0.2s;
+        &:hover {
+            color: #309ba0;
+        }
+    }
+    &.active {
+        .experience {
+            &__title {
+                opacity: 1;
+            }
+            &__li {
+                opacity: 1;
+            }
+            &__icon {
+                opacity: 1;
+            }
+            &__button {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+
+
+
+// ⬇️ SOCIAL ⬇️
+
+.social {
+    width: 100%;
+    @include flex (row, nowrap, center, center);
+    padding-bottom: 5rem;
+    position: relative;
+    margin: auto;
+    &__content {
+        @include flex (row, nowrap, center, center);
+        gap: 4rem;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 1500px;
+        padding-top: 2rem;
+        position: relative;
+    }
+    &__ul {
+        @include flex (row, nowrap, space-between, center);
+        gap: 2rem;
+    }
+    &__link {
+        background-color: #16191C;
+        padding: 2rem;
+        opacity: 0;
+        transition: 0.2s;
+        &:hover{
+            background-color: #64babf;
+            transform: scale(1.1);
+        }
+    }
+    &__icon {
+        width: 32px;
+        height: 32px;
+    }
+    &__content {
+        @include flex (row, nowrap, center, center);
+        gap: 4rem;
+        padding: 2rem 0;
+        position: relative
+    }
+    &__location {
+        display: inline-block;
+        position: absolute;
+        left: -3rem;
+        opacity: 0;
+        bottom: 2rem;
+        transition: 1s;
+    }
+    &__mail {
+        display: inline-block;
+        position: absolute;
+        right: -3rem;
+        opacity: 0;
+        bottom: 2rem;
+        font-weight: bold;
+        transition: right 1s, opacity 1s;
+        &:hover {
+            color: #309ba0;
+        }
+
+    }
+    &.active {
+        .social {
+            &__location {
+                left: 0;
+                opacity: 1;
+            }
+            &__mail {
+                right: 0;
+                opacity: 1;
+            }
+            &__link {
+                opacity: 1;
+            }
+        }
+        
+    }
+
+}
+
+
+
+

@@ -1,0 +1,144 @@
+@use 'reset' as *;
+@use 'mixins' as *;
+@use './common' as *;
+
+
+// ⬇️ PROJECTS MENU ⬇️
+
+.projects-menu {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.813);
+    padding: 2rem 0;
+    border: 1px solid #00000017;
+    &__content {
+        margin: 0 auto;
+        width: 70%;
+        max-width: 1000px;
+        @include flex (row, nowrap, center, center);
+    }
+    &__list {
+        @include flex (row, wrap, center, center);
+        gap: 2rem;
+    }
+}
+
+
+// ⬇️ GENERAL ⬇️
+
+.project {
+    &__header {
+        padding-top: 5rem;
+        text-align: center;
+    }
+    &__learned {
+        padding-bottom: 5rem;
+    }
+    &__section {
+        @include flex (column, nowrap, center, center);
+        text-align: center;
+    }
+    &__container {
+        @include flex (column, nowrap, center, center);
+        gap: 2rem;
+        padding: 4rem 0;
+    }
+    &__table {
+        @include flex (row, nowrap, center, flex-start);
+        gap: 3rem;
+    }
+    &__icon {
+        width: 32px;
+        height: 32px;
+    }
+    &__icon-large {
+        width: 45px;
+        height: 32px;
+    }
+    &__li {
+        @include flex (row, nowrap, center, center);
+        gap: 2rem;
+    }
+}
+
+
+// 👉🏻 Tables, rows, columns 
+
+.table {
+    &__col {
+        @include flex (column, nowrap, center, center);
+        gap: 2rem;
+        flex: 1;
+    }
+    &__categories {
+        gap: 4rem;
+    }
+}
+
+
+
+// 👉🏻 Special for Icons Project
+
+.icons {
+    &__live {
+        @include flex (row, wrap, center, center);
+        gap: 2rem;
+    }
+    &__col {
+        @include flex (column, nowrap, flex-start, flex-start);
+    }
+}
+.workflow {
+    &__media {
+        max-width: 10rem;
+    }
+}
+.live {
+    &__container {
+        width: 30%;
+    }
+}
+
+
+
+
+// 👉🏻 Backgrounds
+
+.background {
+    padding: 2rem 0;
+    margin: 2rem 0;
+    &__grey {
+        background-color: #F5F6F8;
+    }
+    &__blue {
+        background-color: #ADD1D3;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.project {
+    
+    &__backgroundc {
+        background-color: #ADD1D3;
+        padding: 2.5rem 0;
+        margin: 2.5rem 0;
+    }
+}
+

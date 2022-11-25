@@ -1,0 +1,49 @@
+
+// Flex
+
+@mixin flex ( $direction, $break, $justify, $align ){
+    display: flex;
+    flex-flow: $direction $break;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid ( $columns, $gap) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-gap: $gap;
+}
+
+// Multidevice
+
+@mixin device ($punto) {
+    @if ( $punto == bigscreen ) {
+        @media (min-width: 1201px) {
+            @content;
+        }
+    }
+    @else if ( $punto == laptop ){
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if ( $punto == tablet ) {
+        @media (max-width: 900px) {
+            @content;
+        }
+    }
+    @else if ( $punto == movil ) {
+        @media (max-width: 560px) {
+            @content;
+        }
+    }
+}
+
+// Neomorphism
+
+@mixin neo ( $radius, $exp ) {
+    background-color: #eff2f9;
+    box-shadow:  $exp $exp ($exp*2) #d9dbdf, -$exp -$exp ($exp*2) #ffffff;
+    border-radius: $radius;
+}
+

@@ -1,0 +1,221 @@
+@use 'mixins' as *;
+
+// ⬇️ MAIN TEXT STYLES ⬇️
+
+h2 {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 150%;
+}
+
+h3 {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+p {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 230%;
+    b{
+        font-weight: bold;
+    }
+}
+
+
+
+// ⬇️ WIDTH / WRAPPER ⬇️
+
+.wrapper {
+    &__menu {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 1500px;
+    }
+    &__header {
+        margin: 0 auto;
+        width: 70%;
+        max-width: 1500px;
+    }
+    &__default {
+        margin: 0 auto;
+        width: 65%;
+        max-width: 1000px;
+    }
+    &__min {
+        margin: 0 auto;
+        width: 55%;
+        max-width: 800px;
+    }
+    &__inside {
+        margin: 0 auto;
+        width: 85%;
+        max-width: 800px;
+    }
+}
+
+
+
+// ⬇️ SPECIAL TEXT STYLES ⬇️
+
+.caption {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+
+// ⬇️ MOUSE ⬇️
+
+.mouse {
+    pointer-events: none;
+    z-index: 6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: -6px;
+    margin-left: -6px;
+    background-color: var(--white);
+    mix-blend-mode: difference;
+    transition: width .4s,
+                height .4s,
+                margin-top .4s,
+                margin-left .4s,;
+    &.scale{
+        width: 32px;
+        height: 32px;
+        margin-top:-16px;
+        margin-left:-16px;
+    }
+}
+
+
+
+// ⬇️ MENU ⬇️
+
+.menu {
+    width: 100%;
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    z-index: 4;
+    padding: 1.5rem 0;
+    @include flex (row, nowrap, center, center);
+    background-color: rgba(163, 94, 94, 0);
+    transition: top 1s;
+    animation: slideDown 1s ease 1 ;
+    &.light {
+        background-color: white;
+        .menu {
+            &__link{
+                color: black;
+            }
+            &__svg{
+                fill: black;
+            }
+        }
+    }
+    &__content {
+        @include flex (row, nowrap, space-between, center);
+    }
+    &__ul {
+        @include flex (row, nowrap, flex-end, center);
+        gap: 2.5rem;
+    }
+    &__li {
+        @include flex (row, nowrap, center, center);
+        gap: 3rem;
+    }
+    &__link {
+        color: white;
+        height: 1rem;
+        position: relative;
+        overflow: hidden;
+        margin-left: 1rem;
+        &:hover {
+            .link__container {
+                animation-name: menuAnim;
+                animation-duration: 0.2s;
+            }
+        }
+    }
+    &__hello {
+        color: white;
+    }
+    &__svg {
+        fill: rgb(255, 255, 255);
+    }
+}
+
+.menu-light {
+    .menu {
+        background-color: white;
+        &__link {
+            color: var(--text-primary);
+        }
+    }
+}
+
+.link {
+    &__container {
+        @include flex (column, nowrap, center,center);
+        position: relative;
+        top: 0;
+    }
+    &__text {
+        font-size: 1rem;
+        line-height: 100%;
+        line-height: 100%;
+    }
+}
+
+
+
+
+// ⬇️ ANIMATIONS ⬇️
+
+@keyframes left-right {
+    from {
+        left: -3rem;
+    } to {
+        left: 0;
+    }
+}
+
+@keyframes right-left {
+    from {
+        right: -3rem;
+    } to {
+        right: 0;
+    }
+}
+@keyframes opacity {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes menuAnim {
+    from { top: 0; }
+    to { top: -100%; }
+}
+
+@keyframes slideDown{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
