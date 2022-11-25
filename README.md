@@ -1,6 +1,5 @@
-<h1 align="center">Hi 👋, this is my PORFOLIO</h1>
-<h3 align="center">Who I am?</h3>
 
+### Hi, this is my PORFOLIO
 
 - 🔭 I am a Product Designer UI/UX with Frontend Skills
 
@@ -13,7 +12,6 @@
 
  ##  Visit the live site
  https://lauritis-reyes.github.io/porfolio/
- 
  
   ...Work in progress...
  
