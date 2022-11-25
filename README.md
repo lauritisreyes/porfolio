@@ -1,6 +1,3 @@
- ...Work in progress...
- 
- 
 <h1 align="center">Hi 👋, this is my PORFOLIO</h1>
 <h3 align="center">Who I am?</h3>
 
@@ -16,6 +13,9 @@
 
  ##  Visit the live site
  https://lauritis-reyes.github.io/porfolio/
+ 
+ 
+  ...Work in progress...
  
 
 
