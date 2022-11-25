@@ -27,7 +27,7 @@
 
 .project {
     &__header {
-        padding-top: 5rem;
+        padding-top: 3rem;
         text-align: center;
     }
     &__learned {
@@ -45,6 +45,9 @@
     &__table {
         @include flex (row, nowrap, center, flex-start);
         gap: 3rem;
+    }
+    &__grid {
+        @include grid ( 2, 3rem);
     }
     &__icon {
         width: 32px;
@@ -132,13 +135,4 @@
 
 
 
-
-.project {
-    
-    &__backgroundc {
-        background-color: #ADD1D3;
-        padding: 2.5rem 0;
-        margin: 2.5rem 0;
-    }
-}
 

@@ -1283,7 +1283,7 @@ p b {
 }
 
 .project__header {
-  padding-top: 5rem;
+  padding-top: 3rem;
   text-align: center;
 }
 .project__learned {
@@ -1337,6 +1337,13 @@ p b {
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 3rem;
+}
+.project__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3rem 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
 }
 .project__icon {
   width: 32px;
@@ -1435,10 +1442,4 @@ p b {
 }
 .background__blue {
   background-color: #ADD1D3;
-}
-
-.project__backgroundc {
-  background-color: #ADD1D3;
-  padding: 2.5rem 0;
-  margin: 2.5rem 0;
 }
