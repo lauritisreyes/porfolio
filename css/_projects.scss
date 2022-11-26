@@ -33,6 +33,10 @@
     &__learned {
         padding-bottom: 5rem;
     }
+    &__comment {
+        font-size: 0.875rem;
+        font-style: italic;
+    }
     &__section {
         @include flex (column, nowrap, center, center);
         text-align: center;
@@ -82,13 +86,10 @@
 
 // 👉🏻 Special for Icons Project
 
-.icons {
-    &__live {
-        @include flex (row, wrap, center, center);
-        gap: 2rem;
-    }
-    &__col {
-        @include flex (column, nowrap, flex-start, flex-start);
+.guidelines {
+    &__table {
+        padding: 2rem;
+        background-color: #F5F6F8;
     }
 }
 .workflow {
@@ -97,26 +98,34 @@
     }
 }
 .live {
-    &__container {
-        width: 30%;
+    &__grid {
+        align-content: center;
+        padding: 2rem;
+        background-color: #ADD1D3;
+        @include grid (3, 2rem);
+
     }
 }
 
 
+// 👉🏻 Special for Underground App
 
 
-// 👉🏻 Backgrounds
-
-.background {
-    padding: 2rem 0;
-    margin: 2rem 0;
-    &__grey {
-        background-color: #F5F6F8;
+.underground {
+    &__nav-img {
+        margin-top: 4rem;
     }
-    &__blue {
+    &__main {
         background-color: #ADD1D3;
     }
+    // &__arch {
+    //     background-color: #fcfcfc;
+    // }
+    // &__definition {
+    //     background-color: #fcfcfc;
+    // }
 }
+
 
 
 
