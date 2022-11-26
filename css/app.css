@@ -234,6 +234,8 @@ p b {
   background-color: rgba(163, 94, 94, 0);
   -webkit-transition: top 1s;
   transition: top 1s;
+}
+.menu.slidedown {
   -webkit-animation: slideDown 1s ease 1;
           animation: slideDown 1s ease 1;
 }
@@ -346,34 +348,42 @@ p b {
 @-webkit-keyframes left-right {
   from {
     left: -3rem;
+    opacity: 0;
   }
   to {
     left: 0;
+    opacity: 1;
   }
 }
 
 @keyframes left-right {
   from {
     left: -3rem;
+    opacity: 0;
   }
   to {
     left: 0;
+    opacity: 1;
   }
 }
 @-webkit-keyframes right-left {
   from {
     right: -3rem;
+    opacity: 0;
   }
   to {
     right: 0;
+    opacity: 1;
   }
 }
 @keyframes right-left {
   from {
     right: -3rem;
+    opacity: 0;
   }
   to {
     right: 0;
+    opacity: 1;
   }
 }
 @-webkit-keyframes opacity {
@@ -389,6 +399,26 @@ p b {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-top {
+  from {
+    bottom: -3rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes fade-top {
+  from {
+    bottom: -3rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
     opacity: 1;
   }
 }
@@ -854,6 +884,8 @@ p b {
 .gallery__item {
   position: relative;
   overflow: hidden;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 .gallery__item:after {
   content: "";
@@ -889,6 +921,50 @@ p b {
 .gallery__item:hover:after {
   opacity: 1;
 }
+.gallery__item:nth-child(1) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  grid-row-start: span 2;
+  -webkit-animation: left-right 1s ease 1;
+          animation: left-right 1s ease 1;
+}
+.gallery__item:nth-child(1):after {
+  content: "Icon set and Guidelines";
+}
+.gallery__item:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-animation: right-left 1s ease 1;
+          animation: right-left 1s ease 1;
+}
+.gallery__item:nth-child(2):after {
+  content: "Underground App";
+}
+.gallery__item:nth-child(3) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-animation: right-left 1s ease 1;
+          animation: right-left 1s ease 1;
+}
+.gallery__item:nth-child(3):after {
+  content: "Google Copycat";
+}
+.gallery__item:nth-child(4) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-animation: left-right 1s ease 1;
+          animation: left-right 1s ease 1;
+}
+.gallery__item:nth-child(4):after {
+  content: "Notnoise Studio";
+}
+.gallery__item:nth-child(5) {
+  -webkit-animation: right-left 1s ease 1;
+          animation: right-left 1s ease 1;
+}
+.gallery__item:nth-child(5):after {
+  content: "Pink Floyd Illustrations";
+}
 .gallery__img {
   height: 100%;
   -o-object-fit: cover;
@@ -896,41 +972,6 @@ p b {
   position: relative;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-}
-.gallery__icons {
-  grid-row-start: span 2;
-}
-
-.gallery__icons:after {
-  content: "Icon set and Guidelines";
-}
-.gallery__app {
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-.gallery__app:after {
-  content: "Underground App";
-}
-.gallery__google {
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-.gallery__google:after {
-  content: "Google Copycat";
-}
-.gallery__notnoise {
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-.gallery__notnoise:after {
-  content: "Notnoise Studio";
-}
-.gallery__floyd {
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-.gallery__floyd:after {
-  content: "Pink Floyd Illustrations";
 }
 
 .experience {
@@ -1238,6 +1279,8 @@ p b {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -webkit-animation: fade-top 0.5s ease 1;
+          animation: fade-top 0.5s ease 1;
 }
 .project__container {
   display: -webkit-box;

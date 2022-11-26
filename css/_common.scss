@@ -111,7 +111,9 @@ p {
     @include flex (row, nowrap, center, center);
     background-color: rgba(163, 94, 94, 0);
     transition: top 1s;
-    animation: slideDown 1s ease 1 ;
+    &.slidedown {
+        animation: slideDown 1s ease 1 ;
+    }
     &.light {
         background-color: white;
         .menu {
@@ -185,16 +187,20 @@ p {
 @keyframes left-right {
     from {
         left: -3rem;
+        opacity: 0;
     } to {
         left: 0;
+        opacity: 1;
     }
 }
 
 @keyframes right-left {
     from {
         right: -3rem;
+        opacity: 0;
     } to {
         right: 0;
+        opacity: 1;
     }
 }
 @keyframes opacity {
@@ -204,6 +210,17 @@ p {
         opacity: 1;
     }
 }
+
+@keyframes fade-top {
+    from {
+        bottom: -3rem;
+        opacity: 0;
+    } to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
 
 @keyframes menuAnim {
     from { top: 0; }

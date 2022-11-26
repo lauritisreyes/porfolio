@@ -36,6 +36,7 @@
     &__section {
         @include flex (column, nowrap, center, center);
         text-align: center;
+        animation: fade-top 0.5s ease 1;
     }
     &__container {
         @include flex (column, nowrap, center, center);
