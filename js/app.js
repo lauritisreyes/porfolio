@@ -1,7 +1,6 @@
 window.addEventListener('load', function () {
     // 🗒 SELECTORS
     var menuMainPage = document.querySelector('.menu__main-page');
-    var introImage = document.querySelector('.intro__image');
     var mouse = document.querySelector('.mouse');
     var social = document.querySelector('.social');
     var links = document.querySelectorAll('a');

@@ -36,6 +36,8 @@
                             <span class="link__text">Home</span>
                         </div>
                     </a>
+                </li>
+                <li class="menu__li">
                     <a href="projects.html" class="menu__link">
                         <div class="link__container">
                             <span class="link__text">Porfolio</span>
@@ -43,79 +45,81 @@
                         </div>
                     </a>
                 </li>
-                
+                <li class="menu__li">
+                    <button class="menu__burger"></button>
+                </li>
             </ul>
         </div>
     </div>
 
     <!-- ⬇️ INTRO ⬇️ -->
 
-    <section class="intro" id="home">
-        <p class="intro__comment">Loading new products...scroll down...
-        </p>
+    <div class="intro" id="home">
+        <a href="#about" class="intro__down">
+            <p class="down__comment">Loading new products...scroll down...</p>
+            <div class="down__chevron">
+                <img src="assets/general/chevron-down.png" alt="">
+            </div>
+        </a>
         <div class="wrapper__header intro__content ">
             <div class="intro__image">
                 <img class="intro__suit" src="assets/general/human-suit.png" alt="">
                 <img class="intro__spiral" src="assets/general/spiralB.png" alt="">
             </div>
         </div>
-    </section>
+    </div>
 
 
 
     <!-- ⬇️ ABOUT ⬇️ -->
 
-    <section class="about start" id="about">
+    <div class="about start" id="about">
         <div class="about__content">
             <span class="about__title">About</span>
             <p class="about__p"><b>I am Laura Reyes, a Product Design Engineer with Frontend Skills.</b> I started studying Industrial Design Engineering and discovered the UX UI universe after finishing a Master in Graphic Design. I am finding a perfect balance working between tech and design, creating feasible and optimized products. I have 4 years of work experience in the design world and 2 of them in projects related to UX/UI and I am currently looking for a job!
             </p>
         </div>
-    </section>
-    
+    </div>
 
 
-    <!-- ⬇️ FEATURED PROJECTS ⬇️ -->
+    <!-- ⬇️ GALLERY ⬇️ -->
 
-    <section id="work" class="featured start">
-        <div class="featured__content">
-            <div class="featured__gallery">
-                <span class="featured__title">Featured projects</span>
-                <div class="featured__col">
-
+    <div class="gallery start">
+        <div class="wrapper__default gallery__content wrapper__inside">
+            <div class="gallery__container">
+                <span class="gallery__title">Featured projects</span>
+                <div class="gallery__grid">
                     <!-- 🎨 Icons project -->
-                    <a href="icons.html" class="featured__item item__icons">
-                        <img class="featured__img item__icons-img" src="assets/general/main-icons.png" alt="">
+                    <a href="icons.html" class="gallery__item gallery__icons">
+                        <img class="gallery__img" src="assets/general/main-icons.png" alt="">
                     </a>
-                </div>
-                <div class="featured__col">
-
+    
                     <!-- 🎨 App project -->
-                    <a href="underground.html" class="featured__item item__underground">
-                        <img src="assets/general/main-app.png" alt="" class="featured__img">
+                    <a href="underground.html" class="background__grey gallery__item gallery__app">
+                        <img src="assets/general/main-app.png" alt="" class="gallery__img">
                     </a>
-
+    
                     <!-- 🎨 Google project -->
-                    <a href="https://apple-copycat.netlify.app" class="featured__item item__google">
-                        <img src="assets/general/main-google.png" alt="" class="featured__img">
+                    <a href="https://apple-copycat.netlify.app" class="gallery__item gallery__google background__blue">
+                        <img src="assets/general/main-google.png" alt="" class="gallery__img">
                     </a>
                 </div>
 
             </div>
-
+            <a href="projects.html" class="button gallery__button">See all</a>
         </div>
-    </section>
+    </div>
 
 
      <!-- ⬇️ EXPERIENCE ⬇️ -->
      
-     <section class="experience start">
+     <div class="experience start">
         <div class="experience__content">
 
         <!-- Education -->
             <div class="experience__col">
                 <div class="experience__icon">
-                    <img src="assets/general/icon-work.png" alt="">
+                    <img src="assets/general/icon-study.png" alt="">
                 </div>
                 <ul class="experience__ul">
                     <li class="experience__li">Industrial Design Engineering (UPM)</li>
@@ -140,19 +144,19 @@
             </div>
         </div>
         <div class="experience__container">
-            <a href="assets/docs/cv-laura-reyes.pdf" dowload class="experience__button">Download Curriculum</a>
+            <a href="assets/docs/cv-laura-reyes.pdf" dowload class="button experience__button">Download Curriculum</a>
         </div>
-     </section>
+    </div>
 
 
 
      <!-- ⬇️ SOCIAL ⬇️ -->
 
-     <section class="social" id="contact">
+     <div class="social" id="contact">
         <div class="social__content wrapper__menu">
 
             <!-- 🧩 Relocate -->
-            <span class="social__location">Porfolio programmed from scratch</span>
+            <span class="social__location">Porfolio made from scratch</span>
 
 
             <!-- 🧩 Mail -->
@@ -178,7 +182,7 @@
                 </li>
             </ul>
         </div>
-    </section>
+    </div>
 
     
 

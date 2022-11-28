@@ -29,6 +29,17 @@
         animation: fade 1s ease 1 ;
 
     }
+    &__down {
+        position: absolute;
+        z-index: 2;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        @include flex (column, nowrap, center, center);
+        gap: 1rem;
+    }
     &__spiral {
         position: absolute;
         top: 0;
@@ -36,16 +47,18 @@
         transform-origin: center;
         animation: spiralLoop 4s linear infinite;
     }
+}
+
+.down {
     &__comment {
-        position: absolute;
-        z-index: 2;
-        bottom: 2rem;
-        left: 0;
-        right: 0;
-        margin: auto;
-        text-align: center;
         color: rgb(255, 255, 255);
         font-size: 1rem;
+        transition: 0.2s;
+        animation: opacityInt 2s infinite ease-in-out;
+    }
+    &__chevron {
+        width: 24px;
+        height: 24px;
         transition: 0.2s;
         animation: opacityInt 2s infinite ease-in-out;
     }
@@ -125,148 +138,37 @@
 }
 
 
-// ⬇️ FEATURED ⬇️
-
-.featured {
-    width: 100%;
-    padding: 8rem 0 15rem 0;
-    @include flex (row, wrap, center, center);
-    &__content {
-        @include flex (column, wrap, center, center);
-        gap: 2rem;
-        position: relative;
-        margin: 0 auto;
-        width: 55%;
-        max-width: 800px;
-    }
-    &__gallery {
-        @include flex (row, wrap, center, center);
-        gap: 2rem;
-        position: relative;
-        height: 70vh;
-    }
-    &__col {
-        @include flex (column, nowrap, space-between, space-between);
-        height: 100%;
-        gap: 2rem;
-        flex: 1;
-        width: 100%;
-        position: relative;
-    }
-    &__item {
-        flex: 1;
-        width: 100%;
-        overflow: hidden;
-        @include flex (column, nowrap, center, center);
-        position: relative;
-        transition: 1s;
-        opacity:0;
-        &:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            @include flex (column, nowrap, center, center);
-            background-color: #16191c95;
-            color: white;
-            pointer-events: none;
-            opacity: 0;
-            transition: 0.5s;
-        }
-
-        &:hover {
-            .featured__img{
-                transform: scale(1.2);
-            }
-            &:after {
-                opacity: 1;
-            }
-        }
-    }
-    &__title {
-        color: grey;
-        display: block;
-        position: absolute;
-        transform: rotate(-90deg);
-        transform-origin: top left;
-        bottom: -3rem;
-        left: -4rem;
-        transition: bottom 2s;
-    }
-    &__img {
-        object-fit: cover;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        position: relative;
-        transition: 0.5s;
-    }
-    &.active {
-        .featured {
-            &__title {
-                bottom: 0;
-            }
-            &__item {
-                opacity: 1;
-            }
-        }
-        .item {
-            &__icons {
-                animation: left-right 1s ease 1, opacity 1s ease 1;
-            }
-            &__underground {
-                animation: right-left 1s ease 1, opacity 1s ease 1;
-            }
-            &__google {
-                animation: right-left 1s ease 1, opacity 1s ease 1;
-            }
-        }
-    }
-}
-.item {
-    &__icons {
-        background-color: #ad487a;
-        &:after {
-            content: 'Icon set and Guidelines';
-        }
-    }
-    &__underground {
-        background-color: #ADD1D3;
-        transition-delay: 0.2s;
-        &:after {
-            content: 'Underground App';
-        }
-    }
-    &__google {
-        background-color: #EFEFEF;
-        transition-delay: 0.2s;
-        &:after {
-            content: 'Google Copycat';
-        }
-    }
-}
-
-
-
-
 // ⬇️ GALLERY ⬇️
 
 .gallery {
+    opacity: 0;
     width: 100%;
     padding: 10rem 0;
+    transition: 1s;
     &__content {
         @include flex (column, nowrap, center, center);
+        position: relative;
     }
     &__grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        // grid-auto-rows: 300px;
         grid-gap: 2rem;
+        grid-auto-rows: 300px;
+        position: relative;
+        @include device (tablet){
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: 400px;
+        }
+    }
+    &__container {
+        @include flex (column, nowrap, center, center);
+        position: relative;
+        gap: 2rem;
     }
     &__item {
         position: relative;
+        top: 0;
+        right: 0;
         overflow: hidden;
         transition-delay: 0.2s;
         &:after {
@@ -292,47 +194,105 @@
             }
         }
         &:nth-child(1) {
-            transition-delay: 0.2s;
             grid-row-start: span 2;
-            animation: left-right 1s ease 1;
             &:after {
                 content: 'Icon set and Guidelines';
             }
+            @include device (tablet){
+                grid-row-start: span 1;
+            }
         }
         &:nth-child(2) {
-            transition-delay: 0.2s;
-            animation: right-left 1s ease 1;
+            background-color:#ADD1D3;
             &:after {
                 content: 'Underground App';
             }
         }
         &:nth-child(3) {
-            transition-delay: 0.2s;
-            animation: right-left 1s ease 1;
+            background-color:#f2f3f6;
             &:after {
                 content: 'Google Copycat';
             }
         }
         &:nth-child(4) {
-            transition-delay: 0.2s;
-            animation: left-right 1s ease 1;
             &:after {
                 content: 'Notnoise Studio';
             }
         }
         &:nth-child(5) {
-            animation: right-left 1s ease 1;
             &:after {
                 content: 'Pink Floyd Illustrations';
             }
         }
+        &:nth-child(6) {
+            &:after {
+                content: 'Sulcus Band';
+            }
+        }
+        &:nth-child(6) {
+            grid-column-start: span 2;
+            &:after {
+                content: 'Sulcus Band';
+            }
+            @include device (tablet){
+                grid-column-start: span 1;
+            }
+        }
 
+    }
+    &__button {
+        margin-top: 5rem;
     }
     &__img {
         height: 100%;
         object-fit: cover;
         position: relative;
         transition: 0.5s;
+    }
+    &__title {
+        color: grey;
+        display: block;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        bottom: 0rem;
+        left: -4rem;
+        transition: bottom 2s;
+        @include device (laptop){
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: rotate(0);
+        }
+    }
+    &.active {
+        opacity: 1;
+        .gallery {
+            &__item {
+                &:nth-child(1) {
+                    animation: left-right 1s ease 1;
+                }
+                &:nth-child(2) {
+                    animation: right-left 1s ease 1;
+                }
+                &:nth-child(3) {
+                    animation: right-left 1s ease 1;
+                }
+                &:nth-child(4) {
+                    animation: left-right 1s ease 1;
+                }
+                &:nth-child(5) {
+                    animation: right-left 1s ease 1;
+                }
+                &:nth-child(6) {
+                    animation: opacity 1s ease 1;
+                }
+        
+            }
+            &__button {
+                animation: opacity 1s ease 1;
+            }
+        }
     }
 
 }
@@ -353,6 +313,9 @@
         margin: 0 auto;
         width: 65%;
         max-width: 1000px;
+        @include device (laptop){
+            @include flex (column, nowrap, center, center);
+        }
     }
     &__col {
         @include flex (column, wrap, flex-start, center);
@@ -379,18 +342,12 @@
         opacity: 0;
         transition: 1s;
     }
+    &__button {
+        margin-top: 5rem;
+    }
     &__container {
         width: 100%;
         @include flex (column, wrap, center, center);
-    }
-    &__button {
-        margin-top: 5rem;
-        font-weight: bold;
-        opacity: 0;
-        transition: opacity 1s, color 0.2s;
-        &:hover {
-            color: #309ba0;
-        }
     }
     &.active {
         .experience {
@@ -404,7 +361,7 @@
                 opacity: 1;
             }
             &__button {
-                opacity: 1;
+                animation: opacity 1s ease 1;
             }
         }
     }
@@ -453,7 +410,10 @@
         @include flex (row, nowrap, center, center);
         gap: 4rem;
         padding: 2rem 0;
-        position: relative
+        position: relative;
+        @include device (laptop){
+            @include flex (column-reverse, nowrap, center, center);
+        }
     }
     &__location {
         display: inline-block;
@@ -462,6 +422,9 @@
         opacity: 0;
         bottom: 2rem;
         transition: 1s;
+        @include device (laptop){
+            position: relative;
+        }
     }
     &__mail {
         display: inline-block;
@@ -471,10 +434,13 @@
         bottom: 2rem;
         font-weight: bold;
         transition: right 1s, opacity 1s;
+        color: #309ba0;
         &:hover {
-            color: #309ba0;
+            color: #17686c;
         }
-
+        @include device (laptop){
+            position: relative;
+        }
     }
     &.active {
         .social {
@@ -494,7 +460,6 @@
     }
 
 }
-
 
 
 

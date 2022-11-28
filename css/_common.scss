@@ -27,6 +27,7 @@ p {
 
 
 
+
 // ⬇️ WIDTH / WRAPPER ⬇️
 
 .wrapper {
@@ -44,6 +45,13 @@ p {
         margin: 0 auto;
         width: 65%;
         max-width: 1000px;
+        @include device (tablet){
+            width: 75%;
+        }
+        @include device (movil){
+            width: 100%;
+            padding: 0 2rem;
+        }
     }
     &__min {
         margin: 0 auto;
@@ -54,6 +62,12 @@ p {
         margin: 0 auto;
         width: 85%;
         max-width: 800px;
+        @include device (tablet){
+            width: 90%;
+        }
+        @include device (movil){
+            width: 100%;
+        }
     }
 }
 
@@ -66,6 +80,14 @@ p {
     font-size: 1rem;
     font-weight: 300;
     text-align: center;
+}
+
+.button {
+    font-weight: bold;
+    color: #309ba0;
+    &:hover {
+        color: #17686c;
+    }
 }
 
 
@@ -142,11 +164,15 @@ p {
         position: relative;
         overflow: hidden;
         margin-left: 1rem;
+        display: block;
         &:hover {
             .link__container {
                 animation-name: menuAnim;
                 animation-duration: 0.2s;
             }
+        }
+        @include device (movil){
+            display: none;
         }
     }
     &__hello {
@@ -154,6 +180,33 @@ p {
     }
     &__svg {
         fill: rgb(255, 255, 255);
+    }
+    &__burger {
+        width: 32px;
+        height: 32px;
+        display: none;
+        position: relative;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+        &:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+        }
+        @include device (movil) {
+            display: block;
+        }
     }
 }
 

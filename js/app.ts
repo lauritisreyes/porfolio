@@ -5,7 +5,6 @@ window.addEventListener ( 'load', ( ) =>{
     // 🗒 SELECTORS
 
     const menuMainPage = ( document.querySelector('.menu__main-page') as HTMLDivElement)
-    const introImage = (document.querySelector ('.intro__image') as HTMLDivElement)
 
     const mouse = (document.querySelector ('.mouse') as HTMLDivElement)
     const social = (document.querySelector ('.social') as HTMLDivElement)
