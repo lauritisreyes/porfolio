@@ -11,7 +11,7 @@
 
 
  ##  Visit the live site
- https://lauritis-reyes.github.io/porfolio/
+  https://lauritisreyes.github.io/porfolio/
  
   ...Work in progress...
  
