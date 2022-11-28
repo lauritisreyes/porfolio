@@ -5,6 +5,7 @@ window.addEventListener ( 'load', ( ) =>{
     // 🗒 SELECTORS
 
     const menuMainPage = ( document.querySelector('.menu__main-page') as HTMLDivElement)
+    const menuBurger = ( document.querySelector('.menu__burger') as HTMLDivElement)
 
     const mouse = (document.querySelector ('.mouse') as HTMLDivElement)
     const social = (document.querySelector ('.social') as HTMLDivElement)
@@ -20,7 +21,7 @@ window.addEventListener ( 'load', ( ) =>{
 
 
     let mouseMovement = ()=>{
-        mouse.style.transform = `translateX(${cursorX}px) translateY(${cursorY}px)` 
+        mouse.style.transform = `translateX(${cursorX}px) translateY(${cursorY}px` 
     }
 
 
@@ -88,9 +89,6 @@ window.addEventListener ( 'load', ( ) =>{
         }else {
             menuMainPage.classList.remove('light')
         }
-
-    
-       
 
 
     })

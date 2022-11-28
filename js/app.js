@@ -1,6 +1,7 @@
 window.addEventListener('load', function () {
     // 🗒 SELECTORS
     var menuMainPage = document.querySelector('.menu__main-page');
+    var menuBurger = document.querySelector('.menu__burger');
     var mouse = document.querySelector('.mouse');
     var social = document.querySelector('.social');
     var links = document.querySelectorAll('a');
@@ -10,7 +11,7 @@ window.addEventListener('load', function () {
     var cursorX = 0;
     var cursorY = 0;
     var mouseMovement = function () {
-        mouse.style.transform = "translateX(".concat(cursorX, "px) translateY(").concat(cursorY, "px)");
+        mouse.style.transform = "translateX(".concat(cursorX, "px) translateY(").concat(cursorY, "px");
     };
     window.addEventListener('mousemove', function (_a) {
         var clientX = _a.clientX, clientY = _a.clientY;
