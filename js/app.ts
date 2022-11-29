@@ -52,6 +52,11 @@ window.addEventListener ( 'load', ( ) =>{
         })
     })
 
+    // 🗒 BURGER
+    menuBurger.addEventListener ('click', () => {
+        menuBurger.classList.toggle ('active')
+    })
+
 
 
     // 🗒 ANIMATIONS WHEN SCROLLING

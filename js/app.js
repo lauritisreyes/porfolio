@@ -36,6 +36,10 @@ window.addEventListener('load', function () {
             mouse.classList.remove('scale');
         });
     });
+    // 🗒 BURGER
+    menuBurger.addEventListener('click', function () {
+        menuBurger.classList.toggle('active');
+    });
     // 🗒 ANIMATIONS WHEN SCROLLING
     window.addEventListener('scroll', function () {
         // 👉🏻 Sections
