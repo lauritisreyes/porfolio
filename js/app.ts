@@ -13,23 +13,24 @@ window.addEventListener ( 'load', ( ) =>{
     const buttons = document.querySelectorAll <HTMLButtonElement> ('button')
     const start = document.querySelectorAll <HTMLLIElement> ('.start')
 
+
+
     // 🗒 MOUSE MOVEMENT
 
     let cursorX = 0
     let cursorY = 0
         
-
-
     let mouseMovement = ()=>{
         mouse.style.transform = `translateX(${cursorX}px) translateY(${cursorY}px` 
     }
-
 
     window.addEventListener ( 'mousemove', ( { clientX, clientY } ) => {
         cursorX = clientX
         cursorY = clientY
         mouseMovement()
     })
+
+
 
     // 🗒 MOUSE OVER LINKS
 
@@ -52,43 +53,67 @@ window.addEventListener ( 'load', ( ) =>{
     })
 
 
+
     // 🗒 ANIMATIONS WHEN SCROLLING
 
     window.addEventListener ('scroll', () => {
 
+
+
         // 👉🏻 Sections
 
-        start.forEach ( (element, i) => {
-            let topElement : number = element.offsetTop
-            let pixel : number = window.scrollY 
-            let windowHeight : number = window.innerHeight
+        let sectionsEffects = () => {
 
-            if( pixel >= topElement - (windowHeight * 0.8) ){
-                element.classList.add('active')
-            }else{
-                element.classList.remove('active')
-            }
-        })
+            start.forEach ( (element, i) => {
+                let topElement : number = element.offsetTop
+                let pixel : number = window.scrollY 
+                let windowHeight : number = window.innerHeight
+    
+                if( pixel >= topElement - (windowHeight * 0.8) ){
+                    element.classList.add('active')
+                }else{
+                    element.classList.remove('active')
+                }
+            })
+        }
+
+        start && sectionsEffects ()
+
+
+
 
         // 👉🏻 Social Menu
 
-        let topElement : number = social.offsetTop
         let pixel : number = window.scrollY 
         let windowHeight : number = window.innerHeight
 
-        if( pixel + windowHeight >= topElement ){
-            social.classList.add('active')
-        }else{
-            social.classList.remove('active')
+        let socialEffects = () => {
+            let topElement : number = social.offsetTop
+
+            if( pixel + windowHeight >= topElement ){
+                social.classList.add('active')
+            }else{
+                social.classList.remove('active')
+            }
         }
+
+        social && socialEffects()
+
+
+
 
         // 👉🏻 Main Menu
 
-        if (pixel >= windowHeight){
-            menuMainPage.classList.add('light')
-        }else {
-            menuMainPage.classList.remove('light')
+        let mainmenuEffects = () => {
+            
+            if (pixel >= windowHeight){
+                menuMainPage.classList.add('light')
+            }else {
+                menuMainPage.classList.remove('light')
+            }
         }
+
+        menuMainPage && mainmenuEffects ()
 
 
     })

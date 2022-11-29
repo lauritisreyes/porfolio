@@ -232,6 +232,8 @@ p b {
   mix-blend-mode: difference;
   -webkit-transition: width 0.4s, height 0.4s, margin-top 0.4s, margin-left 0.4s;
   transition: width 0.4s, height 0.4s, margin-top 0.4s, margin-left 0.4s;
+  -webkit-animation: opacity 0.5s ease 1;
+          animation: opacity 0.5s ease 1;
 }
 .mouse.scale {
   width: 32px;
@@ -384,7 +386,6 @@ p b {
     display: block;
   }
 }
-
 .menu-light .menu {
   background-color: white;
 }

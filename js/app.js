@@ -39,33 +39,42 @@ window.addEventListener('load', function () {
     // 🗒 ANIMATIONS WHEN SCROLLING
     window.addEventListener('scroll', function () {
         // 👉🏻 Sections
-        start.forEach(function (element, i) {
-            var topElement = element.offsetTop;
-            var pixel = window.scrollY;
-            var windowHeight = window.innerHeight;
-            if (pixel >= topElement - (windowHeight * 0.8)) {
-                element.classList.add('active');
-            }
-            else {
-                element.classList.remove('active');
-            }
-        });
+        var sectionsEffects = function () {
+            start.forEach(function (element, i) {
+                var topElement = element.offsetTop;
+                var pixel = window.scrollY;
+                var windowHeight = window.innerHeight;
+                if (pixel >= topElement - (windowHeight * 0.8)) {
+                    element.classList.add('active');
+                }
+                else {
+                    element.classList.remove('active');
+                }
+            });
+        };
+        start && sectionsEffects();
         // 👉🏻 Social Menu
-        var topElement = social.offsetTop;
         var pixel = window.scrollY;
         var windowHeight = window.innerHeight;
-        if (pixel + windowHeight >= topElement) {
-            social.classList.add('active');
-        }
-        else {
-            social.classList.remove('active');
-        }
+        var socialEffects = function () {
+            var topElement = social.offsetTop;
+            if (pixel + windowHeight >= topElement) {
+                social.classList.add('active');
+            }
+            else {
+                social.classList.remove('active');
+            }
+        };
+        social && socialEffects();
         // 👉🏻 Main Menu
-        if (pixel >= windowHeight) {
-            menuMainPage.classList.add('light');
-        }
-        else {
-            menuMainPage.classList.remove('light');
-        }
+        var mainmenuEffects = function () {
+            if (pixel >= windowHeight) {
+                menuMainPage.classList.add('light');
+            }
+            else {
+                menuMainPage.classList.remove('light');
+            }
+        };
+        menuMainPage && mainmenuEffects();
     });
 });
