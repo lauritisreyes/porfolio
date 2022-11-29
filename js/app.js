@@ -2,6 +2,7 @@ window.addEventListener('load', function () {
     // 🗒 SELECTORS
     var menuMainPage = document.querySelector('.menu__main-page');
     var menuBurger = document.querySelector('.menu__burger');
+    var menuUl = document.querySelector('.menu__ul');
     var mouse = document.querySelector('.mouse');
     var social = document.querySelector('.social');
     var links = document.querySelectorAll('a');
@@ -18,6 +19,9 @@ window.addEventListener('load', function () {
         cursorX = clientX;
         cursorY = clientY;
         mouseMovement();
+    });
+    window.addEventListener('mousemove', function (e) {
+        console.log(e);
     });
     // 🗒 MOUSE OVER LINKS
     links.forEach(function (eachLink) {
@@ -39,6 +43,7 @@ window.addEventListener('load', function () {
     // 🗒 BURGER
     menuBurger.addEventListener('click', function () {
         menuBurger.classList.toggle('active');
+        menuUl.classList.toggle('active');
     });
     // 🗒 ANIMATIONS WHEN SCROLLING
     window.addEventListener('scroll', function () {

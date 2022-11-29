@@ -104,12 +104,18 @@
     width: 100%;
     padding: 15rem 0 7rem 0;
     @include flex (row, wrap, flex-start, center);
+    @include device (movil){
+        padding: 7rem 0 3.5rem 0;
+    }
     &__content {
         @include flex (column, wrap, center, flex-start);
         text-align: center;
         margin: 0 auto;
         width: 50%;
         max-width: 650px;
+        @include device (movil) {
+            width: 100%;
+        }
     }
     &__title {
         color: grey;
@@ -145,6 +151,9 @@
     width: 100%;
     padding: 10rem 0;
     transition: 1s;
+    @include device (movil){
+        padding: 5rem 0;
+    }
     &__content {
         @include flex (column, nowrap, center, center);
         position: relative;
@@ -306,13 +315,13 @@
     width: 100%;
     padding-bottom: 15rem ;
     @include flex (column, wrap, center, center);
+    @include device (movil){
+        padding-bottom: 7.5rem;
+    }
     &__content {
         @include flex (row,nowrap, center, flex-start);
         gap: 2rem;
         position: relative;
-        margin: 0 auto;
-        width: 65%;
-        max-width: 1000px;
         @include device (laptop){
             @include flex (column, nowrap, center, center);
         }
@@ -320,6 +329,9 @@
     &__col {
         @include flex (column, wrap, flex-start, center);
         flex: 1;
+        @include device (movil){
+            width: 100%;
+        }
     }
     &__icon {
         width: 32px;

@@ -6,6 +6,7 @@ window.addEventListener ( 'load', ( ) =>{
 
     const menuMainPage = ( document.querySelector('.menu__main-page') as HTMLDivElement)
     const menuBurger = ( document.querySelector('.menu__burger') as HTMLDivElement)
+    const menuUl = ( document.querySelector('.menu__ul') as HTMLElement)
 
     const mouse = (document.querySelector ('.mouse') as HTMLDivElement)
     const social = (document.querySelector ('.social') as HTMLDivElement)
@@ -29,6 +30,11 @@ window.addEventListener ( 'load', ( ) =>{
         cursorY = clientY
         mouseMovement()
     })
+
+    window.addEventListener ( 'mousemove', ( e ) => {
+        console.log(e)
+    })
+    
 
 
 
@@ -55,6 +61,8 @@ window.addEventListener ( 'load', ( ) =>{
     // 🗒 BURGER
     menuBurger.addEventListener ('click', () => {
         menuBurger.classList.toggle ('active')
+        menuUl.classList.toggle ('active')
+
     })
 
 

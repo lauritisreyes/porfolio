@@ -33,8 +33,9 @@ p {
 .wrapper {
     &__menu {
         margin: 0 auto;
-        width: 90%;
-        max-width: 1500px;
+        width: 100%;
+        // width: 90%;
+        // max-width: 1500px;
     }
     &__header {
         margin: 0 auto;
@@ -107,6 +108,7 @@ p {
     margin-left: -6px;
     background-color: var(--white);
     mix-blend-mode: difference;
+    transform: translateY(-30px) translateX(-30px) ;
     transition: width .4s,
                 height .4s,
                 margin-top .4s,
@@ -117,6 +119,9 @@ p {
         height: 32px;
         margin-top:-16px;
         margin-left:-16px;
+    }
+    @media (pointer:none) {
+        display: none;
     }
 }
 
@@ -134,6 +139,10 @@ p {
     @include flex (row, nowrap, center, center);
     background-color: rgba(163, 94, 94, 0);
     transition: top 1s;
+    @include device (movil){
+        background-color: white;
+        padding: 1rem 0;
+    }
     &.slidedown {
         animation: slideDown 1s ease 1 ;
     }
@@ -155,13 +164,38 @@ p {
                 }
             }
         }
+        @include device (movil){
+            background-color: white;
+        }
     }
     &__content {
+        @include flex (row, nowrap, space-between, center);
+        @include device (movil){
+            flex-direction: column;
+        }
+    }
+    &__container-movil {
+        width: 100%;
         @include flex (row, nowrap, space-between, center);
     }
     &__ul {
         @include flex (row, nowrap, flex-end, center);
         gap: 2.5rem;
+        transition: 0.2s;
+        padding-right: 2rem;
+        @include device (movil){
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            height: 100vh;
+            display: none;
+            pointer-events: none;
+        }
+        &.active {
+            @include flex (column, nowrap, center, center);
+            gap: 3rem;
+            pointer-events: all;
+        }
     }
     &__li {
         @include flex (row, nowrap, center, center);
@@ -180,21 +214,30 @@ p {
                 animation-duration: 0.2s;
             }
         }
-        @include device (movil){
-            display: none;
+        @include device (movil) {
+            color: black;
+            height: 1rem;
         }
     }
     &__hello {
         color: white;
+        padding-left: 2rem;
+        @include device (movil) {
+            color: black;
+        }
     }
     &__svg {
         fill: rgb(255, 255, 255);
+        @include device (movil) {
+            fill: rgb(0, 0, 0);
+        }
     }
     &__burger {
         width: 32px;
         height: 32px;
         display: none;
         position: relative;
+        margin-right: 2rem;
         &:before {
             content: '';
             width: 100%;
@@ -207,6 +250,9 @@ p {
             right: 0;
             margin: auto;
             transition: 0.5s ease;
+            @include device (movil) {
+                background-color: black;
+            }
         }
         &:after {
             content: '';
@@ -220,6 +266,10 @@ p {
             right: 0;
             margin: auto;
             transition: 0.5s ease;
+            @include device (movil) {
+                background-color: black;
+            }
+            
         }
         @include device (movil) {
             display: block;
@@ -256,6 +306,9 @@ p {
         font-size: 1rem;
         line-height: 100%;
         line-height: 100%;
+        @include device (movil) {
+            font-size: 1rem;
+        }
     }
 }
 
