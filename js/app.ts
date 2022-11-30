@@ -31,11 +31,6 @@ window.addEventListener ( 'load', ( ) =>{
         mouseMovement()
     })
 
-    window.addEventListener ( 'mousemove', ( e ) => {
-        console.log(e)
-    })
-    
-
 
 
     // 🗒 MOUSE OVER LINKS

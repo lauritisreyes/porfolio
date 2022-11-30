@@ -20,9 +20,6 @@ window.addEventListener('load', function () {
         cursorY = clientY;
         mouseMovement();
     });
-    window.addEventListener('mousemove', function (e) {
-        console.log(e);
-    });
     // 🗒 MOUSE OVER LINKS
     links.forEach(function (eachLink) {
         eachLink.addEventListener('mouseover', function () {
