@@ -126,6 +126,9 @@ p {
     @media (pointer: none ) {
         display: none;
     }
+    @media (hover: none ) {
+        display: none;
+    }
 }
 
 

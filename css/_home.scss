@@ -21,10 +21,9 @@
     }
     &__image {
         margin-top: 8rem;
-        max-width: 1000px;
+        max-height: 90vh;
         pointer-events: none;
         position: relative;
-        top: 3rem;
         animation: fade 1s ease 1 ;
 
     }

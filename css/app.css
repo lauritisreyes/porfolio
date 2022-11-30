@@ -252,6 +252,11 @@ p b {
     display: none;
   }
 }
+@media (hover: none) {
+  .mouse {
+    display: none;
+  }
+}
 
 .menu {
   width: 100%;
@@ -697,10 +702,9 @@ p b {
 }
 .intro__image {
   margin-top: 8rem;
-  max-width: 1000px;
+  max-height: 90vh;
   pointer-events: none;
   position: relative;
-  top: 3rem;
   -webkit-animation: fade 1s ease 1;
           animation: fade 1s ease 1;
 }
