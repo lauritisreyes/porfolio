@@ -236,6 +236,11 @@ p b {
   -webkit-animation: opacity 0.5s ease 1;
           animation: opacity 0.5s ease 1;
 }
+@media (pointer: none) {
+  .mouse {
+    display: none;
+  }
+}
 .mouse.scale {
   width: 32px;
   height: 32px;
@@ -692,8 +697,7 @@ p b {
 }
 .intro__image {
   margin-top: 8rem;
-  min-width: 200px;
-  max-width: 500px;
+  max-width: 1000px;
   pointer-events: none;
   position: relative;
   top: 3rem;
@@ -1174,6 +1178,9 @@ p b {
 @media (max-width: 560px) {
   .experience__col {
     width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 .experience__icon {
@@ -1199,6 +1206,11 @@ p b {
   opacity: 0;
   -webkit-transition: 1s;
   transition: 1s;
+}
+@media (max-width: 900px) {
+  .experience__li {
+    text-align: left;
+  }
 }
 .experience__button {
   margin-top: 5rem;
