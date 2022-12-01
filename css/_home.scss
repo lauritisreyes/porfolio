@@ -149,7 +149,7 @@
     opacity: 0;
     width: 100%;
     padding: 10rem 0;
-    transition: 1s;
+    transition: opacity 1s;
     @include device (movil){
         padding: 5rem 0;
     }
@@ -173,12 +173,40 @@
         position: relative;
         gap: 2rem;
     }
+    &__button {
+        margin-top: 5rem;
+        @include device (movil){
+            margin-top: 2rem;
+        }
+    }
+    &__img {
+        height: 100%;
+        min-height: 300px;
+        object-fit: cover;
+        position: relative;
+        transition: 0.5s;
+    }
+    &__title {
+        color: grey;
+        display: block;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        bottom: 0rem;
+        left: -4rem;
+        transition: bottom 2s;
+        @include device (laptop){
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: rotate(0);
+        }
+    }
     &__item {
         position: relative;
         top: 0;
         right: 0;
         overflow: hidden;
-        transition-delay: 1s;
         &:after {
             content: '';
             position: absolute;
@@ -215,11 +243,17 @@
             &:after {
                 content: 'Underground App';
             }
+            .img {
+                object-fit: contain;
+            }
         }
         &:nth-child(3) {
             background-color:#f2f3f6;
             &:after {
                 content: 'Google Copycat';
+            }
+            .img {
+                object-fit: contain;
             }
         }
         &:nth-child(4) {
@@ -248,35 +282,12 @@
         }
 
     }
-    &__button {
-        margin-top: 5rem;
-        @include device (movil){
-            margin-top: 2rem;
-        }
-    }
-    &__img {
-        height: 100%;
-        min-height: 300px;
-        object-fit: cover;
-        position: relative;
-        transition: 0.5s;
-    }
-    &__title {
-        color: grey;
-        display: block;
-        position: absolute;
-        transform: rotate(-90deg);
-        transform-origin: top left;
-        bottom: 0rem;
-        left: -4rem;
-        transition: bottom 2s;
-        @include device (laptop){
-            position: relative;
-            top: 0;
-            left: 0;
-            transform: rotate(0);
-        }
-    }
+
+
+
+
+
+
     &.active {
         opacity: 1;
         .gallery {
@@ -291,18 +302,18 @@
                     animation: right-left 1s ease 1 both;
                 }
                 &:nth-child(4) {
-                    animation: left-right 1s ease 1 1s;
+                    animation: left-right 1s ease 1 both;
                 }
                 &:nth-child(5) {
-                    animation: right-left 1s ease 1 1s;
+                    animation: right-left 1s ease 1 both;
                 }
                 &:nth-child(6) {
-                    animation: opacity 1s ease 1 1s;
+                    animation: opacity 1s ease 1 both;
                 }
         
             }
             &__button {
-                animation: opacity 1s ease 1;
+                animation: opacity 1s ease 1 both;
             }
         }
     }
