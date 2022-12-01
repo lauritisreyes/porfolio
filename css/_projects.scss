@@ -69,6 +69,11 @@
         @include flex (row, nowrap, center, center);
         gap: 2rem;
     }
+    &__p {
+        @include device (movil){
+            
+        }
+    }
 }
 
 

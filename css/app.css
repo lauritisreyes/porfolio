@@ -984,7 +984,6 @@ p b {
 }
 .gallery__img {
   height: 100%;
-  min-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
@@ -1070,9 +1069,10 @@ p b {
 .gallery__item:nth-child(2):after {
   content: "Underground App";
 }
-.gallery__item:nth-child(2) .img {
+.gallery__item:nth-child(2) img {
   -o-object-fit: contain;
      object-fit: contain;
+  color: green;
 }
 .gallery__item:nth-child(3) {
   background-color: #f2f3f6;
@@ -1080,7 +1080,7 @@ p b {
 .gallery__item:nth-child(3):after {
   content: "Google Copycat";
 }
-.gallery__item:nth-child(3) .img {
+.gallery__item:nth-child(3) img {
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -1588,7 +1588,6 @@ p b {
           align-items: center;
   gap: 2rem;
 }
-
 .table__col {
   display: -webkit-box;
   display: -ms-flexbox;

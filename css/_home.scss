@@ -181,7 +181,7 @@
     }
     &__img {
         height: 100%;
-        min-height: 300px;
+        // min-height: 300px;
         object-fit: cover;
         position: relative;
         transition: 0.5s;
@@ -243,8 +243,10 @@
             &:after {
                 content: 'Underground App';
             }
-            .img {
+            // Does not work
+            img {
                 object-fit: contain;
+                color: green;
             }
         }
         &:nth-child(3) {
@@ -252,7 +254,8 @@
             &:after {
                 content: 'Google Copycat';
             }
-            .img {
+            // Does not work
+            img {
                 object-fit: contain;
             }
         }
