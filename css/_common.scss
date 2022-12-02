@@ -46,7 +46,7 @@ p {
         max-width: 1500px;
         @include device (movil){
             width: 100%;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
     }
     &__default {
@@ -58,7 +58,7 @@ p {
         }
         @include device (movil){
             width: 100%;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
     }
     &__min {
@@ -153,11 +153,13 @@ p {
     background-color: rgba(163, 94, 94, 0);
     transition: top 1s;
     @include device (movil){
-        background-color: white;
-        padding: 1rem 0;
+        padding: 0;
+        position: absolute;
+        background-color: transparent;
     }
     &.slidedown {
         animation: slideDown 1s ease 1 ;
+
     }
     &.light {
         background-color: white;
@@ -177,8 +179,8 @@ p {
                 }
             }
         }
-        @include device (movil){
-            background-color: white;
+        @include device (movil) {
+            background-color: transparent;
         }
     }
     &__content {
@@ -193,6 +195,10 @@ p {
         @include flex (row, nowrap, space-between, center);
         position: relative;
         z-index: 4;
+        // background-color: #16171b;
+        @include device (movil){
+            padding: 1rem 0;
+        }
     }
     &__ul {
         @include flex (row, nowrap, flex-end, center);
@@ -200,18 +206,17 @@ p {
         transition: 0.2s;
         padding-right: 2rem;
         @include device (movil){
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             @include flex (column, nowrap, center, center);
             width: 100%;
             height: 100vh;
             position: absolute;
-            top: 0;
+            top: 0rem;
             left: 100%;
             z-index: 3;
             transition: 1s;
-        }
-        &.active {
-            left: 0;
+            pointer-events: none;
+            overflow: hidden;
         }
     }
     &__li {
@@ -232,22 +237,18 @@ p {
             }
         }
         @include device (movil) {
-            color: black;
             height: 1rem;
+            color: black;
         }
     }
     &__hello {
         color: white;
         padding-left: 2rem;
-        @include device (movil) {
-            color: black;
-        }
+        width: 100px;
     }
     &__svg {
         fill: rgb(255, 255, 255);
-        @include device (movil) {
-            fill: rgb(0, 0, 0);
-        }
+        transition: 1s;
     }
     &__burger {
         width: 32px;
@@ -268,9 +269,6 @@ p {
             right: 0;
             margin: auto;
             transition: 1s ease;
-            @include device (movil) {
-                background-color: black;
-            }
         }
         &:after {
             content: '';
@@ -285,22 +283,32 @@ p {
             right: 0;
             margin: auto;
             transition: 0.5s ease;
-            @include device (movil) {
-                background-color: black;
-            }
             
         }
         @include device (movil) {
             display: block;
         }
-        &.active {
-            &:before {
-                transform: rotate(45deg);
-                top:15px;
+    }
+    &.active {
+        .menu {
+            &__burger {
+                &:before {
+                    transform: rotate(45deg);
+                    top:15px;
+                    background-color: black;
+                }
+                &:after {
+                    transform: rotate(-45deg) ;
+                    bottom: 15px;
+                    background-color: black;
+                }
             }
-            &:after {
-                transform: rotate(-45deg) ;
-                bottom: 15px;
+            &__ul {
+                left: 0;
+                pointer-events: all;
+            }
+            &__svg {
+                fill: black;
             }
         }
     }

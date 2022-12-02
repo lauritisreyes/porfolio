@@ -6,6 +6,7 @@ window.addEventListener ( 'load', ( ) =>{
 
     const menuMainPage = ( document.querySelector('.menu__main-page') as HTMLDivElement)
     const menuBurger = ( document.querySelector('.menu__burger') as HTMLDivElement)
+    const menu = ( document.querySelector('.menu') as HTMLDivElement)
     const menuUl = ( document.querySelector('.menu__ul') as HTMLElement)
 
     const mouse = (document.querySelector ('.mouse') as HTMLDivElement)
@@ -57,6 +58,7 @@ window.addEventListener ( 'load', ( ) =>{
     menuBurger.addEventListener ('click', () => {
         menuBurger.classList.toggle ('active')
         menuUl.classList.toggle ('active')
+        menu.classList.toggle ('active')
 
     })
 
