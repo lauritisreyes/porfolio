@@ -99,24 +99,38 @@
 
 // 👉🏻 Special for Icons Project
 
-.guidelines {
-    &__table {
-        padding: 2rem;
-        background-color: #F5F6F8;
+.icons {
+    .guidelines {
+        &__table {
+            padding: 2rem;
+            background-color: #F5F6F8;
+        }
     }
-}
-.workflow {
-    &__media {
-        max-width: 10rem;
+    .workflow {
+        &__media {
+            max-width: 10rem;
+        }
     }
-}
-.live {
-    &__grid {
-        align-content: center;
-        padding: 2rem;
+    &__live {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: #ADD1D3;
-        @include grid (3, 2rem);
-
+    }
+    .live {
+        &__grid {
+            padding: 4rem;
+            // @include grid ( 3, 2rem);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4rem;
+        }
+        &__li {
+            max-width: 100px;
+        }
+    }
+    &__col {
+        align-items: flex-start;
     }
 }
 
@@ -128,14 +142,17 @@
     &__nav-img {
         margin-top: 4rem;
     }
-    &__main {
-        background-color: #ADD1D3;
-    }
     &__users {
         @include flex (column, nowrap, center, center);
         gap: 0.5;
     }
+    .survey {
+        &__img {
+            padding-bottom: 2rem;
+        }
+    }
 }
+
 
 
 

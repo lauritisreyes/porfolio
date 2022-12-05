@@ -26,7 +26,7 @@
     <meta property="twitter:image" content="https://lauritisreyes.com/assets/link.jpg">
 
     <!-- Favicon -->
-    <link  rel="icon" href="assets/favicon.jpg" />
+    <link  rel="icon" href="assets/favicon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -128,7 +128,7 @@
 
     <!--  👉🏻 User Research -->
 
-    <div class="project__section">
+    <div class="project__section underground">
         <div class="wrapper__default project__container">
             <h3 class="">User Research</h3>
             <p class="wrapper__inside project__p">This phase was focused on understanding user behaviours, needs and motivations.
@@ -136,17 +136,31 @@
             <div class="wrapper__inside">
                 <img class="project__img" src="assets/underground/peopleB.jpg" alt="Underground People">
             </div>
+
+            <!-- 🗒 Survey -->
             <p class="wrapper__inside project__p">I decided to do a survey. The aim of it was to detect the best functions, to prioritize them and listen to suggestions. I asked 20 different people to answer 3 quick questions explaining them the aim of the project.</p>
-            <ul class="underground__users">
-                <li class="project__comment">20 people</li>
-                    <li class="project__comment">Ages: 15-63 years old</li>
-                    <li class="project__comment">Smartphone users</li>
-                    <li class="project__comment">Travel ocasionally or usually using the underground</li>
-            </ul>
             <div class="wrapper__inside">
-                <img class="project__img" src="assets/underground/messages.jpg" alt="Interview Messages">
+                <img class="project__img survey__img" src="assets/underground/people-survey.jpg" alt="Underground People">
             </div>
+            <!-- First question -->
+            <p class="wrapper__inside project__p">I. Select the sentence that represents you the best</p>
+            <div class="wrapper__inside">
+                <img class="project__img survey__img" src="assets/underground/sentences-survey.jpg" alt="Underground People">
+            </div>
+            <!-- Second question -->
+            <p class="wrapper__inside project__p">II. Rate the following extra functions in an Underground App from 1 (Not important) to 5 (Very Important):</p>
+            <div class="wrapper__inside">
+                <img class="project__img survey__img" src="assets/underground/select.jpg" alt="Interview Messages">
+            </div>
+            <!-- Third question -->
+            <p class="wrapper__inside project__p">III. Coments, suggestions, thoughts:</p>
+            <div class="wrapper__inside">
+                <img class="project__img survey__img" src="assets/underground/messages.jpg" alt="Interview Messages">
+            </div>
+            <!-- Conclusions -->
             <p class="wrapper__inside project__p">The conclusions of the survey were that many users have to top up different types of tickets. It is important to keep it in mind to make a clear top up screen. On the other hand customers prefer to have a clear and well desined app with only the main features and some interesting extra ones ( map and real time incidents)</p>
+
+            <!-- 🗒 MoSCoW -->
             <p class="wrapper__inside project__p">I used a MoSCoW to sort tasks by priority. It was useful to discard the unnecessary ones and highlight the vital product needs. For example, I discarded the street map feature because I prefered to focus in other functions that could stand out more from the crowd.</p>
             <div class="underground__moscow wrapper__inside">
                 <img class="project__img" src="assets/underground/moscow.jpg" alt="">
@@ -177,6 +191,7 @@
             <div class="wrapper__inside">
                 <img class="project__img" src="assets/underground/sketches.jpg" alt="Sketches of the Underground App">
             </div>
+            <span class="caption">Sketches and low fidelity wireframes</span>
         </div>
     </div>
 
@@ -191,10 +206,10 @@
             <div class="wrapper__inside underground__nav-img">
                 <img class="project__img" src="assets/underground/tech.jpg" alt="Technology and blue colors reference">
             </div>
+            <p class="wrapper__inside project__p">I have defined different types of action buttons and cells deppending on their importance. The app has also been evaluated for contrast standards. I have checked the elements with ‘A11y - Color Contrast Checker’ Figma Plugin and some colors and font weights have been modified. I have used ‘Color Blind Simulator’ Figma Plugin to design an app that does not only deppend on colors but also on shapes and weights.</p>
             <div class="wrapper__inside underground__nav-img">
                 <img class="project__img" src="assets/underground/Screen2.jpg" alt="Underground App main Screen. Cards">
             </div>
-            <span class="caption">I have defined different types of action buttons and cells deppending on their importance.</span>
         </div>
     </div>
 
@@ -205,7 +220,19 @@
     <div class="project__section">
         <div class="project__container wrapper__default">
             <h3 class="project__subtitle">App abstract</h3>
-            <p class="wrapper__inside project__p">Customers can use their smartphones as underground cards just by tapping on ‘Use Card’ button. Payment methods could be saved and customers can top-up their cards in a few steps. And there is a map screen which sums up all the extra information realted to stations, lines and journeys</p>
+            <p class="wrapper__inside project__p">Customers can use their smartphones as underground cards just by tapping on ‘Use Card’ button. Payment methods could be saved and customers can top-up their cards in a few steps. Furthermore, there is a map screen which sums up all the extra information realted to stations, lines and journeys</p>
+            <div class="wrapper__inside video__container">
+                <video autoplay loop muted playsinline class="video" src="assets/underground/navigation.webm"></video>
+            </div>
+            <span class="caption">General Navigation prototype</span>
+            <div class="wrapper__inside video__container">
+                <video autoplay loop muted playsinline class="video" src="assets/underground/payment.webm"></video>
+            </div>
+            <span class="caption">Payment prototype</span>
+            <div class="wrapper__inside">
+                <img src="assets/underground/screen7.jpg" alt="Underground App Map Features" class="project__img">
+            </div>
+            <span class="caption">Map Screen Schema</apan>
         </div>
     </div>
 
@@ -229,7 +256,6 @@
         <div class="projects-menu__content">
             <ul class="projects-menu__list">
                 <li class="list__item"><a class="list__link" href="icons.html">Icon Set & Guidelines</a></li>
-                <li class="list__item"><a class="list__link" href="#">Underground App</a></li>
                 <li class="list__item"><a class="list__link" href="https://github.com/lauritisreyes/google-copycat">Google Copycat</a></li>
                 <li class="list__item"><a class="list__link" href="notnoise.html">Notnoise Studio</a></li>
                 <li class="list__item"><a class="list__link" href="floyd.html">Pink Floyd Illustrations</a></li>

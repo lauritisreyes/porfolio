@@ -24,8 +24,8 @@
     border: 0;
     box-sizing: border-box;
     vertical-align: baseline;
-    // cursor: none;
-  
+    cursor: none;
+
   }
   
   /* Evitamos problemas con las imagenes */
@@ -111,7 +111,7 @@
     color       : var(--text-primary);
     background  : var(--white);
     line-height: 230%;
-    hyphens: auto;
+    // hyphens: auto;
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

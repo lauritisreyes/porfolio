@@ -155,6 +155,8 @@ p {
     @include device (movil){
         padding: 0;
         position: absolute;
+        top: 0;
+        left: 0;
         background-color: transparent;
     }
     &.slidedown {
@@ -212,16 +214,22 @@ p {
             height: 100vh;
             position: absolute;
             top: 0rem;
-            left: 100%;
+            left: 0;
+            opacity: 0;
+            padding-left: 2rem;
             z-index: 3;
-            transition: 1s;
+            transition: 0.5ss;
             pointer-events: none;
-            overflow: hidden;
         }
     }
     &__li {
         @include flex (row, nowrap, center, center);
         gap: 3rem;
+        @include device (movil){
+            position: relative;
+            transition-delay: 0.5s;
+            transition: 0.2s;
+        }
     }
     &__link {
         color: white;
@@ -290,6 +298,9 @@ p {
         }
     }
     &.active {
+        position: fixed;
+        top: 0;
+        left: 0;
         .menu {
             &__burger {
                 &:before {
@@ -305,7 +316,9 @@ p {
             }
             &__ul {
                 left: 0;
+                opacity: 1;
                 pointer-events: all;
+                padding-left: 2rem;
             }
             &__svg {
                 fill: black;

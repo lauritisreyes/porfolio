@@ -26,6 +26,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   vertical-align: baseline;
+  cursor: none;
 }
 
 /* Evitamos problemas con las imagenes */
@@ -123,9 +124,6 @@ body {
   color: var(--text-primary);
   background: var(--white);
   line-height: 230%;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -292,6 +290,8 @@ p b {
   .menu {
     padding: 0;
     position: absolute;
+    top: 0;
+    left: 0;
     background-color: transparent;
   }
 }
@@ -405,12 +405,13 @@ p b {
     height: 100vh;
     position: absolute;
     top: 0rem;
-    left: 100%;
+    left: 0;
+    opacity: 0;
+    padding-left: 2rem;
     z-index: 3;
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: 0.5ss;
+    transition: 0.5ss;
     pointer-events: none;
-    overflow: hidden;
   }
 }
 .menu__li {
@@ -428,6 +429,15 @@ p b {
       -ms-flex-align: center;
           align-items: center;
   gap: 3rem;
+}
+@media (max-width: 560px) {
+  .menu__li {
+    position: relative;
+    -webkit-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
 }
 .menu__link {
   color: white;
@@ -503,6 +513,11 @@ p b {
     display: block;
   }
 }
+.menu.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .menu.active .menu__burger:before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -517,7 +532,9 @@ p b {
 }
 .menu.active .menu__ul {
   left: 0;
+  opacity: 1;
   pointer-events: all;
+  padding-left: 2rem;
 }
 .menu.active .menu__svg {
   fill: black;
@@ -1108,9 +1125,21 @@ p b {
   -webkit-animation: left-right 1s ease 1 both;
           animation: left-right 1s ease 1 both;
 }
+@media (max-width: 560px) {
+  .gallery.active .gallery__item:nth-child(1) {
+    -webkit-animation: right-left 1s ease 1 both;
+            animation: right-left 1s ease 1 both;
+  }
+}
 .gallery.active .gallery__item:nth-child(2) {
   -webkit-animation: right-left 1s ease 1 both;
           animation: right-left 1s ease 1 both;
+}
+@media (max-width: 560px) {
+  .gallery.active .gallery__item:nth-child(2) {
+    -webkit-animation: left-right 1s ease 1 both;
+            animation: left-right 1s ease 1 both;
+  }
 }
 .gallery.active .gallery__item:nth-child(3) {
   -webkit-animation: right-left 1s ease 1 both;
@@ -1127,6 +1156,12 @@ p b {
 .gallery.active .gallery__item:nth-child(6) {
   -webkit-animation: opacity 1s ease 1 both;
           animation: opacity 1s ease 1 both;
+}
+@media (max-width: 560px) {
+  .gallery.active .gallery__item:nth-child(6) {
+    -webkit-animation: left-right 1s ease 1 both;
+            animation: left-right 1s ease 1 both;
+  }
 }
 .gallery.active .gallery__button {
   -webkit-animation: opacity 1s ease 1 both;
@@ -1619,32 +1654,44 @@ p b {
   gap: 4rem;
 }
 
-.guidelines__table {
+.icons .guidelines__table {
   padding: 2rem;
   background-color: #F5F6F8;
 }
-
-.workflow__media {
+.icons .workflow__media {
   max-width: 10rem;
 }
-
-.live__grid {
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding: 2rem;
+.icons__live {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #ADD1D3;
+}
+.icons .live__grid {
+  padding: 4rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr;
+  -ms-grid-columns: 1fr 4rem 1fr 4rem 1fr;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 4rem;
+}
+.icons .live__li {
+  max-width: 100px;
+}
+.icons__col {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .underground__nav-img {
   margin-top: 4rem;
-}
-.underground__main {
-  background-color: #ADD1D3;
 }
 .underground__users {
   display: -webkit-box;
@@ -1661,4 +1708,7 @@ p b {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.5;
+}
+.underground .survey__img {
+  padding-bottom: 2rem;
 }
