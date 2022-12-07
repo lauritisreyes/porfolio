@@ -319,6 +319,9 @@ p b {
     background-color: transparent;
   }
 }
+.menu__name {
+  display: none;
+}
 .menu__content {
   display: -webkit-box;
   display: -ms-flexbox;

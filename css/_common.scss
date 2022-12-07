@@ -185,6 +185,9 @@ p {
             background-color: transparent;
         }
     }
+    &__name {
+        display: none;
+    }
     &__content {
         @include flex (row, nowrap, space-between, center);
         position: relative;
