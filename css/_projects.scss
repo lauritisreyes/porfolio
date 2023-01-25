@@ -56,6 +56,9 @@
     }
     &__grid {
         @include grid ( 2, 3rem);
+        @include device (movil){
+            @include grid (2, 1rem)
+        }
     }
     &__icon {
         width: 32px;
@@ -154,6 +157,27 @@
 }
 
 
+// 👉🏻 Special for Miniver
+
+.miniver {
+    &__grid {
+        .grid {
+            &__item {
+                &:first-of-type {
+                    grid-row: span 2;
+                    background-color: blue;
+                    img {
+                        height: 100%;
+                    }
+                }
+                &:nth-of-type(3) {
+                    grid-row-start: 2;
+                    grid-column-start: 2;
+                }
+            }
+        }
+    }
+}
 
 
 
