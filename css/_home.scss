@@ -283,16 +283,16 @@
                 grid-column-start: span 1;
             }
         }
-        &:nth-child(7) {
-            &:after {
-                content: 'Miniver Band Logo';
-            }
-        }
-        &:nth-child(8) {
-            &:after {
-                content: 'Buddys Garage Records Logo';
-            }
-        }
+        // &:nth-child(7) {
+        //     &:after {
+        //         content: 'Miniver Band Logo';
+        //     }
+        // }
+        // &:nth-child(8) {
+        //     &:after {
+        //         content: 'Buddys Garage Records Logo';
+        //     }
+        // }
 
     }
 
@@ -327,12 +327,12 @@
                         animation: left-right 1s ease 1 both;
                     }
                 }
-                &:nth-child(7) {
-                    animation: left-right 1s ease 1 both;
-                }
-                &:nth-child(8) {
-                    animation: right-left 1s ease 1 both;
-                }
+                // &:nth-child(7) {
+                //     animation: left-right 1s ease 1 both;
+                // }
+                // &:nth-child(8) {
+                //     animation: right-left 1s ease 1 both;
+                // }
 
             }
             &__button {
@@ -357,16 +357,33 @@
         padding-bottom: 7.5rem;
     }
     &__content {
-        @include flex (row,nowrap, center, flex-start);
-        gap: 2rem;
+        @include flex (column,nowrap, center, center);
+        gap: 6rem;
         position: relative;
+        width: 50%;
+        max-width: 750px;
         @include device (laptop){
+            width: 80%;
+            max-width: none;
             @include flex (column, nowrap, center, center);
         }
+        @include device (movil){
+            gap: 4rem;
+            width: 100%;
+        }
+    }
+    &__header {
+        @include flex (row, nowrap, flex-start, flex-start);
+        gap: 2rem;
     }
     &__col {
-        @include flex (column, wrap, flex-start, center);
+        @include flex (row, nowrap, flex-start, flex-start);
         flex: 1;
+        gap: 2rem;
+        @include device (laptop){
+            flex-direction: column;
+            gap: 0rem;
+        }
         @include device (movil){
             width: 100%;
             align-items: flex-start;
@@ -379,7 +396,6 @@
         transition: 0.5s;
     }
     &__title {
-        margin-top: 0.5rem;
         color: grey;
         margin-bottom: 1rem;
         position: relative;
@@ -388,7 +404,7 @@
     }
     &__li {
         font-size: 1rem;
-        text-align: center;
+        text-align: left;
         position: relative;
         opacity: 0;
         transition: 1s;
@@ -397,16 +413,17 @@
         }
     }
     &__button {
-        color: white;
-        background-color: #309ba0;
+        color: #309ba0;
+        border: 1px solid #309ba0;
+        // border-radius: 4rem;
         padding: 0.3rem 2rem;
         margin-top: 5rem;
         @include device (movil){
             margin-top: 2rem;
         }
         &:hover {
-            background-color: #17686c;
-            color: white;
+            border: 1px solid #17686c;
+            color: #17686c;
         }
     }
     &__container {

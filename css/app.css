@@ -933,12 +933,6 @@ p b {
     grid-column-start: span 1;
   }
 }
-.gallery__item:nth-child(7):after {
-  content: "Miniver Band Logo";
-}
-.gallery__item:nth-child(8):after {
-  content: "Buddys Garage Records Logo";
-}
 .gallery.active {
   opacity: 1;
 }
@@ -984,14 +978,6 @@ p b {
             animation: left-right 1s ease 1 both;
   }
 }
-.gallery.active .gallery__item:nth-child(7) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
-}
-.gallery.active .gallery__item:nth-child(8) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
-}
 .gallery.active .gallery__button {
   -webkit-animation: opacity 1s ease 1 both;
           animation: opacity 1s ease 1 both;
@@ -1013,26 +999,50 @@ p b {
 }
 .experience__content {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
+  align-items: center;
+  gap: 6rem;
   position: relative;
+  width: 50%;
+  max-width: 750px;
 }
 @media (max-width: 1200px) {
   .experience__content {
+    width: 80%;
+    max-width: none;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
   }
 }
+@media (max-width: 560px) {
+  .experience__content {
+    gap: 4rem;
+    width: 100%;
+  }
+}
+.experience__header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+}
 .experience__col {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex: 1;
+  gap: 2rem;
+}
+@media (max-width: 1200px) {
+  .experience__col {
+    flex-direction: column;
+    gap: 0rem;
+  }
 }
 @media (max-width: 560px) {
   .experience__col {
@@ -1047,7 +1057,6 @@ p b {
   transition: 0.5s;
 }
 .experience__title {
-  margin-top: 0.5rem;
   color: grey;
   margin-bottom: 1rem;
   position: relative;
@@ -1056,7 +1065,7 @@ p b {
 }
 .experience__li {
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
   position: relative;
   opacity: 0;
   transition: 1s;
@@ -1067,8 +1076,8 @@ p b {
   }
 }
 .experience__button {
-  color: white;
-  background-color: #309ba0;
+  color: #309ba0;
+  border: 1px solid #309ba0;
   padding: 0.3rem 2rem;
   margin-top: 5rem;
 }
@@ -1078,8 +1087,8 @@ p b {
   }
 }
 .experience__button:hover {
-  background-color: #17686c;
-  color: white;
+  border: 1px solid #17686c;
+  color: #17686c;
 }
 .experience__container {
   width: 100%;
