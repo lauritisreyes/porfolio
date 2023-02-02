@@ -182,6 +182,22 @@ p b {
     padding: 0 1rem;
   }
 }
+.wrapper__biggallery {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+@media (max-width: 900px) {
+  .wrapper__biggallery {
+    width: 95%;
+  }
+}
+@media (max-width: 560px) {
+  .wrapper__biggallery {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
 .wrapper__min {
   margin: 0 auto;
   width: 55%;
@@ -913,26 +929,6 @@ p b {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.gallery__item:nth-child(4):after {
-  content: "Notnoise Studio";
-}
-.gallery__item:nth-child(5):after {
-  content: "Pink Floyd Illustrations";
-}
-.gallery__item:nth-child(6):after {
-  content: "Sulcus Band";
-}
-.gallery__item:nth-child(6) {
-  grid-column-start: span 2;
-}
-.gallery__item:nth-child(6):after {
-  content: "Sulcus Band";
-}
-@media (max-width: 900px) {
-  .gallery__item:nth-child(6) {
-    grid-column-start: span 1;
-  }
-}
 .gallery.active {
   opacity: 1;
 }
@@ -959,24 +955,6 @@ p b {
 .gallery.active .gallery__item:nth-child(3) {
   -webkit-animation: right-left 1s ease 1 both;
           animation: right-left 1s ease 1 both;
-}
-.gallery.active .gallery__item:nth-child(4) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
-}
-.gallery.active .gallery__item:nth-child(5) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
-}
-.gallery.active .gallery__item:nth-child(6) {
-  -webkit-animation: opacity 1s ease 1 both;
-          animation: opacity 1s ease 1 both;
-}
-@media (max-width: 560px) {
-  .gallery.active .gallery__item:nth-child(6) {
-    -webkit-animation: left-right 1s ease 1 both;
-            animation: left-right 1s ease 1 both;
-  }
 }
 .gallery.active .gallery__button {
   -webkit-animation: opacity 1s ease 1 both;
@@ -1388,4 +1366,225 @@ p b {
 .miniver__grid .grid__item:nth-of-type(3) {
   grid-row-start: 2;
   grid-column-start: 2;
+}
+
+.galleryexp {
+  overflow-x: hidden;
+  opacity: 0;
+  padding: 10rem 0;
+  transition: opacity 1s;
+}
+@media (max-width: 560px) {
+  .galleryexp {
+    padding: 5rem 0;
+  }
+}
+.galleryexp__content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.galleryexp__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  grid-auto-rows: 300px;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .galleryexp__grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 200px;
+  }
+}
+.galleryexp__container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+.galleryexp__button {
+  margin-top: 5rem;
+}
+@media (max-width: 560px) {
+  .galleryexp__button {
+    margin-top: 2rem;
+  }
+}
+.galleryexp__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  transition: 0.5s;
+}
+.galleryexp__title {
+  color: grey;
+  display: block;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  bottom: 0rem;
+  left: -4rem;
+  transition: bottom 2s;
+}
+@media (max-width: 1200px) {
+  .galleryexp__title {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+  }
+}
+.galleryexp__item {
+  position: relative;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+}
+.galleryexp__item:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(22, 25, 28, 0.5843137255);
+  color: white;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+.galleryexp__item:hover .galleryexp__img {
+  transform: scale(1.2);
+}
+.galleryexp__item:hover:after {
+  opacity: 1;
+}
+.galleryexp__item:nth-child(1) {
+  grid-row-start: span 2;
+}
+.galleryexp__item:nth-child(1):after {
+  content: "Icon set and Guidelines";
+}
+@media (max-width: 900px) {
+  .galleryexp__item:nth-child(1) {
+    grid-row-start: span 1;
+  }
+}
+.galleryexp__item:nth-child(2) {
+  background-color: #ADD1D3;
+}
+.galleryexp__item:nth-child(2):after {
+  content: "Underground App";
+}
+.galleryexp__item:nth-child(2) img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  color: green;
+}
+.galleryexp__item:nth-child(3) {
+  background-color: #f2f3f6;
+}
+.galleryexp__item:nth-child(3):after {
+  content: "Google Copycat";
+}
+.galleryexp__item:nth-child(3) img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.galleryexp__item:nth-child(4):after {
+  content: "Notnoise Studio";
+}
+.galleryexp__item:nth-child(5):after {
+  content: "Pink Floyd Illustrations";
+}
+.galleryexp__item:nth-child(6) {
+  grid-column-start: span 2;
+}
+.galleryexp__item:nth-child(6):after {
+  content: "Sulcus Band";
+}
+@media (max-width: 900px) {
+  .galleryexp__item:nth-child(6) {
+    grid-column-start: span 1;
+  }
+}
+.galleryexp__item:nth-child(7):after {
+  content: "Miniver Band Logo";
+}
+.galleryexp__item:nth-child(8) {
+  background-color: #F5F6F8;
+}
+.galleryexp__item:nth-child(8):after {
+  content: "Atomic Design";
+}
+.galleryexp.active {
+  opacity: 1;
+}
+.galleryexp.active .galleryexp__item:nth-child(1) {
+  -webkit-animation: left-right 1s ease 1 both;
+          animation: left-right 1s ease 1 both;
+}
+@media (max-width: 560px) {
+  .galleryexp.active .galleryexp__item:nth-child(1) {
+    -webkit-animation: right-left 1s ease 1 both;
+            animation: right-left 1s ease 1 both;
+  }
+}
+.galleryexp.active .galleryexp__item:nth-child(2) {
+  -webkit-animation: right-left 1s ease 1 both;
+          animation: right-left 1s ease 1 both;
+}
+@media (max-width: 560px) {
+  .galleryexp.active .galleryexp__item:nth-child(2) {
+    -webkit-animation: left-right 1s ease 1 both;
+            animation: left-right 1s ease 1 both;
+  }
+}
+.galleryexp.active .galleryexp__item:nth-child(3) {
+  -webkit-animation: right-left 1s ease 1 both;
+          animation: right-left 1s ease 1 both;
+}
+.galleryexp.active .galleryexp__item:nth-child(4) {
+  -webkit-animation: left-right 1s ease 1 both;
+          animation: left-right 1s ease 1 both;
+}
+.galleryexp.active .galleryexp__item:nth-child(5) {
+  -webkit-animation: right-left 1s ease 1 both;
+          animation: right-left 1s ease 1 both;
+}
+.galleryexp.active .galleryexp__item:nth-child(6) {
+  -webkit-animation: opacity 1s ease 1 both;
+          animation: opacity 1s ease 1 both;
+}
+@media (max-width: 560px) {
+  .galleryexp.active .galleryexp__item:nth-child(6) {
+    -webkit-animation: left-right 1s ease 1 both;
+            animation: left-right 1s ease 1 both;
+  }
+}
+.galleryexp.active .galleryexp__item:nth-child(7) {
+  -webkit-animation: left-right 1s ease 1 both;
+          animation: left-right 1s ease 1 both;
+}
+.galleryexp.active .galleryexp__item:nth-child(8) {
+  -webkit-animation: right-left 1s ease 1 both;
+          animation: right-left 1s ease 1 both;
+}
+.galleryexp.active .galleryexp__button {
+  -webkit-animation: opacity 1s ease 1 both;
+          animation: opacity 1s ease 1 both;
 }/*# sourceMappingURL=app.css.map */

@@ -179,6 +179,211 @@
     }
 }
 
+// ⬇️ galleryexp ⬇️
+
+.galleryexp {
+    overflow-x: hidden;
+    opacity: 0;
+    padding: 10rem 0;
+    transition: opacity 1s;
+    @include device (movil){
+        padding: 5rem 0;
+    }
+    &__content {
+        @include flex (column, nowrap, center, center);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+        grid-auto-rows: 300px;
+        position: relative;
+        @include device (tablet){
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: 200px;
+        }
+    }
+    &__container {
+        @include flex (column, nowrap, center, center);
+        position: relative;
+        gap: 2rem;
+    }
+    &__button {
+        margin-top: 5rem;
+        @include device (movil){
+            margin-top: 2rem;
+        }
+    }
+    &__img {
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        transition: 0.5s;
+    }
+    &__title {
+        color: grey;
+        display: block;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        bottom: 0rem;
+        left: -4rem;
+        transition: bottom 2s;
+        @include device (laptop){
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: rotate(0);
+        }
+    }
+    &__item {
+        position: relative;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include flex (column, nowrap, center, center);
+            background-color: #16191c95;
+            color: white;
+            pointer-events: none;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        &:hover {
+            .galleryexp__img{
+                transform: scale(1.2);
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:nth-child(1) {
+            grid-row-start: span 2;
+            &:after {
+                content: 'Icon set and Guidelines';
+            }
+            @include device (tablet){
+                grid-row-start: span 1;
+            }
+        }
+        &:nth-child(2) {
+            background-color:#ADD1D3;
+            &:after {
+                content: 'Underground App';
+            }
+            
+            img {
+                object-fit: contain;
+                color: green;
+            }
+        }
+        &:nth-child(3) {
+            background-color:#f2f3f6;
+            &:after {
+                content: 'Google Copycat';
+            }
+            
+            img {
+                object-fit: contain;
+            }
+        }
+        &:nth-child(4) {
+            &:after {
+                content: 'Notnoise Studio';
+            }
+        }
+        &:nth-child(5) {
+            &:after {
+                content: 'Pink Floyd Illustrations';
+            }
+        }
+        
+        &:nth-child(6) {
+            grid-column-start: span 2;
+            &:after {
+                content: 'Sulcus Band';
+            }
+            @include device (tablet){
+                grid-column-start: span 1;
+            }
+        }
+        &:nth-child(7) {
+            &:after {
+                content: 'Miniver Band Logo';
+            }
+        }
+        &:nth-child(8) {
+            background-color:#F5F6F8;
+            &:after {
+                content: 'Atomic Design';
+            }
+        }
+
+    }
+
+    &.active {
+        opacity: 1;
+        .galleryexp {
+            &__item {
+                &:nth-child(1) {
+                    animation: left-right 1s ease 1 both;
+                    @include device (movil) {
+                        animation: right-left 1s ease 1 both;
+                    }
+                }
+                &:nth-child(2) {
+                    animation: right-left 1s ease 1 both;
+                    @include device (movil) {
+                        animation: left-right 1s ease 1 both;
+                    }
+                }
+                &:nth-child(3) {
+                    animation: right-left 1s ease 1 both;
+                }
+                &:nth-child(4) {
+                    animation: left-right 1s ease 1 both;
+                }
+                &:nth-child(5) {
+                    animation: right-left 1s ease 1 both;
+                }
+                &:nth-child(6) {
+                    animation: opacity 1s ease 1 both;
+                    @include device (movil) {
+                        animation: left-right 1s ease 1 both;
+                    }
+                }
+                &:nth-child(7) {
+                    animation: left-right 1s ease 1 both;
+                }
+                &:nth-child(8) {
+                    animation: right-left 1s ease 1 both;
+                }
+
+            }
+            &__button {
+                animation: opacity 1s ease 1 both;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
 
 
 

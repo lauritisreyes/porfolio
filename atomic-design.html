@@ -10,33 +10,32 @@
 
     gtag('config', 'G-N96RDLS5N1');
     </script>
-
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/app.css">
 
-    <!-- Primary Meta Tags -->
-    <title>Laura Reyes - Sulcus</title>
-    <meta name="title" content="Laura Reyes | Product Designer">
-    <meta name="description" content="Hi! My name is Laura Reyes and this is my Product Design portfolio">
+        <!-- Primary Meta Tags -->
+        <title>Laura Reyes - Atomic Design </title>
+        <meta name="title" content="Laura Reyes | Product Designer">
+        <meta name="description" content="Hi! My name is Laura Reyes and this is my Product Design portfolio">
+    
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://lauritisreyes.com/">
+        <meta property="og:title" content="Laura Reyes | Product Designer">
+        <meta property="og:description" content="Hi! My name is Laura Reyes and this is my Product Design portfolio">
+        <meta property="og:image" content="https://lauritisreyes.com/assets/link.jpg">
+    
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://lauritisreyes.com/">
+        <meta property="twitter:title" content="Laura Reyes | Product Designer">
+        <meta property="twitter:description" content="Hi! My name is Laura Reyes and this is my Product Design portfolio">
+        <meta property="twitter:image" content="https://lauritisreyes.com/assets/link.jpg">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lauritisreyes.com/">
-    <meta property="og:title" content="Laura Reyes | Product Designer">
-    <meta property="og:description" content="Hi! My name is Laura Reyes and this is my Product Design portfolio">
-    <meta property="og:image" content="https://lauritisreyes.com/assets/link.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://lauritisreyes.com/">
-    <meta property="twitter:title" content="Laura Reyes | Product Designer">
-    <meta property="twitter:description" content="Hi! My name is Laura Reyes and this is my Product Design portfolio">
-    <meta property="twitter:image" content="https://lauritisreyes.com/assets/link.jpg">
-
-    <!-- Favicon -->
+        <!-- Favicon -->
     <link  rel="icon" href="assets/favicon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -114,77 +113,103 @@
 
     <div class="project__section project__header">
         <div class="wrapper__default project__container">
-            <h2 class="project__title">Sulcus Band</h2>
-            <p class="wrapper__inside project__p">Sulcus is a rock band based in Madrid and also a group of creatives. They use photography, design and animation to enhance their song lyrics. I am taking part of the project as a graphic designer (and drummer). I have designed the website, motion clips, song covers, the dossier and some posters, and adapted them to different formats (live events, social media and merchandising)</p>
-            <a href="assets/docs/dossier-sulcus-esp.pdf" download class="button">Download the Dossier</a>
-            <div class="wrapper__inside">
-                <img class="project__img" src="assets/sulcus/live-events.jpg" alt="Sulcus Band in a live event">
-            </div>
-            <span class="caption">Animations projected in a live event. Photography: Ruben Herrera</span>
+            <h2 class="project__title">Complex components - Atomic design and Figma Tools</h2>
+            <p class="wrapper__inside project__p">The aim of this personal project has been to do a deeper research about how to build complex components for a better comunication between designers and developers. This example has been done with an <b>Instagram post.</b></p>
         </div>
     </div>
 
-
-
-    <!--  👉🏻 Website -->
+    <!--  👉🏻 Atomic Design -->
 
     <div class="project__section">
         <div class="wrapper__default project__container">
-            <h3 class="project__subtitle">Website</h3>
-            <p class="wrapper__inside project__p">The website has been designed in one page using Wordpress. I have focused on highlighting the design component of the band and also all the social links.</p>
-            <a href="https://wearesulcus.com" class="button">Visit wearesulcus.com</a>
+            <h3 class="project__subtitle">I. Atomic Design</h3>
+            <p class="wrapper__inside project__p">Subdividing components into smaller ones helps making changes fastly. It also affects less other elements. It is important to use clear names and not too long so developers will be more confortable using a similar nomenclature. First of all, I subdivided the component and decided a consistent nomenclature:</p>
+            <span class="caption">Template / Molecule / Atom</span>
             <div class="wrapper__inside">
-                <img class="project__img" src="assets/sulcus/mockup-web.jpg" alt="Sulcus Band website">
+                <img class="project__img" src="assets/atomic/Brad-Frost-atomic.jpg" alt="Brad Frost Atomic design">
             </div>
+            <span class="caption">References: Brad Frost. Author of the Atomic Design book.</span>
+            <div class="components__subdivision">
+                
+                <div class="wrapper__inside">
+                    <img class="project__img" src="assets/atomic/template.png" alt="Template of an instagram post">
+                </div>
+                <span class="caption">Template.</span>
+                
+                <div class="wrapper__inside">
+                    <img class="project__img" src="assets/atomic/molecules.png" alt="Molecules of an instagram post component">
+                </div>
+                <span class="caption">Molecules</span>
+
+                <div class="wrapper__inside">
+                    <img class="project__img" src="assets/atomic/atoms.png" alt="Atoms of an instagram post component">
+                </div>
+                <span class="caption">Atoms</span>
+            </div>
+
+            
         </div>
     </div>
 
 
-
-    <!--  👉🏻 Motion Clips -->
+    <!--  👉🏻 Atomic Design -->
 
     <div class="project__section">
         <div class="wrapper__default project__container">
-            <h3 class="project__subtitle">Motion Clips</h3>
-            <p class="wrapper__inside project__p">Here are some animations that I have done for live events, social media and music platforms. They are always based on song lyrics.</p>
-
-            <!--  🚀 Animation 1 -->
+            <h3 class="project__subtitle">II. Auto Layout, Constraits and Variants</h3>
+            <p class="wrapper__inside project__p">Everything has been designed in Figma with the help of some features:</p>
             <div class="wrapper__inside">
-                <img class="project__img" src="assets/sulcus/bottle.gif" alt="Animation Bottle Sad">
+                <img class="project__img" src="assets/atomic/figma-features.jpg" alt="Figma features: constraits, autolyaout and variants">
             </div>
-            <span class="caption">Angry Blues. Sulcus LP. Depression and sadness.</span>
 
-            <!--  🚀 Animation 2 -->
+            <!-- Autolyaout -->
             <div class="wrapper__inside">
-                <img class="project__img" src="assets/sulcus/fastshark.gif" alt="Shark in the ocean animation">
+                <img class="project__img" src="assets/atomic/variations.jpg" alt="Figma components using constraits, autolyaout and variants">
             </div>
-            <span class="caption">No Solution Reprise. Sulcus LP.</span>
+            <span class="caption">Examples using Autolyaout and constraits</span>
 
-            <!--  🚀 Animation 3 -->
-            <div class="wrapper__inside">
-                <img class="project__img" src="assets/sulcus/spiral.gif" alt="Man Spiral Face Animation">
-            </div>
-            <span class="caption">Precious Drop. Sulcus LP. Life Loops.</span>
 
-            <!--  🚀 Animation 4 -->
+            <!-- Variants -->
+            <p class="wrapper__inside project__p">I used variants for elements that could have different states or appearances. I decided to create new components and not variants if the elements had many differences between them.</p>
             <div class="wrapper__inside">
-                <img class="project__img" src="assets/sulcus/mouth.gif" alt="Mouth Animation">
+                <img class="project__img" src="assets/atomic/variants.png" alt="Figma features: constraits">
             </div>
-            <span class="caption">They Say. Sulcus LP. Obedience and Control.</span>
+            <span class="caption">Example of variants applied to Media: Vertical, Square and Horizontal</span>
+            <p class="wrapper__inside project__p">It is important to add coments or extra <b>documentation</b> if it is not obvious when the designer should use a variant or other one. Developers will write conditions to show or hide elements and it has to be clear.</p>
+
+            
         </div>
     </div>
 
-    <!--  👉🏻 Summary -->  
+
+    <!--  👉🏻 Design Tokens -->
+
+    <div class="project__section">
+        <div class="wrapper__default project__container">
+            <h3 class="project__subtitle">III. Design Tokens</h3>
+            <p class="wrapper__inside project__p">I decided to use Design Tokens to define colors using <b>“Tokens Studio plugin”</b> to variate between Light and Dark mode fast and also to synchronize stiles with developers. I defined a “General” category of colors where I saved all the colors and then I made reference to them in the other categories. I decided to do it because some color codes appeared in more that 1 category.</p>
+            <span class="caption">Two sets: light / dark</span>
+            <span class="caption">5 categories: general / background / text / icons</span>
+            <div class="wrapper__inside">
+                <img class="project__img" src="assets/atomic/light-dark.jpg" alt="Instagram post in light and dark mode">
+            </div>
+        </div>
+    </div>
+
+
+
+      <!-- 👉🏻 Learned -->
+
+      <div class="project__section project__learned icons">
+        <div class="wrapper__default project__container">
+            <h3 class="wrapper__inside project__subtitle">What I learned</h3>
+            <p class="wrapper__inside project__p"> When a component is subdivided into smaller particles, it is easier to make changes. Atomic Design also helps to localize and name components better so developers and designers can use the same nomenclature. Furthermore, Figma has new features every month that are really useful to work more eficiently with components.
+            </p>
+        </div>
+    </div>
+
+
     
-    <div class="project__section">
-        <div class="wrapper__default project__container">
-            <h3 class="project__subtitle">What I have learned</h3>
-            <p class="wrapper__inside project__p">Sulcus is a project where I have worked with a huge variety of creatives, photographers and designers. Because of that I have learned many new tools and ways of working to be adapted to different situations.</p>
-        </div>
-    </div>
-
-
-
 
 
     <!-- ⬇️ PROJECTS MENU ⬇️ -->
@@ -195,10 +220,10 @@
                 <li class="list__item"><a class="list__link" href="icons.html">Icon Set & Guidelines</a></li>
                 <li class="list__item"><a class="list__link" href="underground.html">Underground App</a></li>
                 <li class="list__item"><a class="list__link" href="https://github.com/lauritisreyes/google-copycat">Google Copycat</a></li>
-                <li class="list__item"><a class="list__link" href="notnoise.html">Notnoise Studio</a></li>
                 <li class="list__item"><a class="list__link" href="floyd.html">Pink Floyd Illustrations</a></li>
-                <li class="list__item"><a class="list__link" href="miniver.html">Miniver Band</a></li>
-                <li class="list__item"><a class="list__link" href="atomic-design.html">Atomic Design</a></li>
+                <li class="list__item"><a class="list__link" href="notnoise.html">Notnoise Studio</a></li>
+                <li class="list__item"><a class="list__link" href="sulcus.html">Sulcus</a></li>
+                <li class="list__item"><a class="list__link" href="miniver.html">Miniver</a></li>
             </ul>
         </div>
     </div>

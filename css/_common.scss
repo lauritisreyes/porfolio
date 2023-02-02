@@ -61,6 +61,18 @@ p {
             padding: 0 1rem;
         }
     }
+    &__biggallery {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 1200px;
+        @include device (tablet){
+            width: 95%;
+        }
+        @include device (movil){
+            width: 100%;
+            padding: 0 1rem;
+        }
+    }
     &__min {
         margin: 0 auto;
         width: 55%;
