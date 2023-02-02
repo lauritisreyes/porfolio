@@ -358,7 +358,7 @@
                     animation: right-left 1s ease 1 both;
                 }
                 &:nth-child(6) {
-                    animation: opacity 1s ease 1 both;
+                    animation: left-right 1s ease 1 both;
                     @include device (movil) {
                         animation: left-right 1s ease 1 both;
                     }

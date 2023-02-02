@@ -1567,8 +1567,8 @@ p b {
           animation: right-left 1s ease 1 both;
 }
 .galleryexp.active .galleryexp__item:nth-child(6) {
-  -webkit-animation: opacity 1s ease 1 both;
-          animation: opacity 1s ease 1 both;
+  -webkit-animation: left-right 1s ease 1 both;
+          animation: left-right 1s ease 1 both;
 }
 @media (max-width: 560px) {
   .galleryexp.active .galleryexp__item:nth-child(6) {
