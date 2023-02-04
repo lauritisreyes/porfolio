@@ -183,9 +183,7 @@
 
 .galleryexp {
     overflow-x: hidden;
-    opacity: 0;
     padding: 10rem 0;
-    transition: opacity 1s;
     @include device (movil){
         padding: 5rem 0;
     }
@@ -246,6 +244,7 @@
         top: 0;
         right: 0;
         overflow: hidden;
+        transition: opacity 1s;
         &:after {
             content: '';
             position: absolute;
@@ -280,7 +279,7 @@
         &:nth-child(2) {
             background-color:#ADD1D3;
             &:after {
-                content: 'Underground App';
+                content: 'Underground App (Case Study)';
             }
             
             img {
@@ -291,7 +290,7 @@
         &:nth-child(3) {
             background-color:#f2f3f6;
             &:after {
-                content: 'Google Copycat';
+                content: 'Google Copycat (ReactJS)';
             }
             
             img {
@@ -300,77 +299,38 @@
         }
         &:nth-child(4) {
             &:after {
-                content: 'Notnoise Studio';
+                content: 'Notnoise Studio (Branding)';
             }
         }
         &:nth-child(5) {
             &:after {
-                content: 'Pink Floyd Illustrations';
+                content: 'Pink Floyd (Illustrations)';
             }
         }
         
         &:nth-child(6) {
             grid-column-start: span 2;
             &:after {
-                content: 'Sulcus Band';
+                content: 'Sulcus Band (Graphic and motion design)';
             }
             @include device (tablet){
                 grid-column-start: span 1;
             }
         }
         &:nth-child(7) {
+            background-color: #add3c8;
             &:after {
-                content: 'Miniver Band Logo';
+                content: 'Instagram (Figma UI kit)';
             }
-        }
-        &:nth-child(8) {
-            background-color:#F5F6F8;
-            &:after {
-                content: 'Atomic Design';
+            img {
+                object-fit: contain;
             }
         }
 
     }
 
     &.active {
-        opacity: 1;
         .galleryexp {
-            &__item {
-                &:nth-child(1) {
-                    animation: left-right 1s ease 1 both;
-                    @include device (movil) {
-                        animation: right-left 1s ease 1 both;
-                    }
-                }
-                &:nth-child(2) {
-                    animation: right-left 1s ease 1 both;
-                    @include device (movil) {
-                        animation: left-right 1s ease 1 both;
-                    }
-                }
-                &:nth-child(3) {
-                    animation: right-left 1s ease 1 both;
-                }
-                &:nth-child(4) {
-                    animation: left-right 1s ease 1 both;
-                }
-                &:nth-child(5) {
-                    animation: right-left 1s ease 1 both;
-                }
-                &:nth-child(6) {
-                    animation: left-right 1s ease 1 both;
-                    @include device (movil) {
-                        animation: left-right 1s ease 1 both;
-                    }
-                }
-                &:nth-child(7) {
-                    animation: left-right 1s ease 1 both;
-                }
-                &:nth-child(8) {
-                    animation: right-left 1s ease 1 both;
-                }
-
-            }
             &__button {
                 animation: opacity 1s ease 1 both;
             }

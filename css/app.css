@@ -1370,9 +1370,7 @@ p b {
 
 .galleryexp {
   overflow-x: hidden;
-  opacity: 0;
   padding: 10rem 0;
-  transition: opacity 1s;
 }
 @media (max-width: 560px) {
   .galleryexp {
@@ -1449,6 +1447,7 @@ p b {
   top: 0;
   right: 0;
   overflow: hidden;
+  transition: opacity 1s;
 }
 .galleryexp__item:after {
   content: "";
@@ -1488,7 +1487,7 @@ p b {
   background-color: #ADD1D3;
 }
 .galleryexp__item:nth-child(2):after {
-  content: "Underground App";
+  content: "Underground App (Case Study)";
 }
 .galleryexp__item:nth-child(2) img {
   -o-object-fit: contain;
@@ -1499,90 +1498,38 @@ p b {
   background-color: #f2f3f6;
 }
 .galleryexp__item:nth-child(3):after {
-  content: "Google Copycat";
+  content: "Google Copycat (ReactJS)";
 }
 .galleryexp__item:nth-child(3) img {
   -o-object-fit: contain;
      object-fit: contain;
 }
 .galleryexp__item:nth-child(4):after {
-  content: "Notnoise Studio";
+  content: "Notnoise Studio (Branding)";
 }
 .galleryexp__item:nth-child(5):after {
-  content: "Pink Floyd Illustrations";
+  content: "Pink Floyd (Illustrations)";
 }
 .galleryexp__item:nth-child(6) {
   grid-column-start: span 2;
 }
 .galleryexp__item:nth-child(6):after {
-  content: "Sulcus Band";
+  content: "Sulcus Band (Graphic and motion design)";
 }
 @media (max-width: 900px) {
   .galleryexp__item:nth-child(6) {
     grid-column-start: span 1;
   }
 }
+.galleryexp__item:nth-child(7) {
+  background-color: #add3c8;
+}
 .galleryexp__item:nth-child(7):after {
-  content: "Miniver Band Logo";
+  content: "Instagram (Figma UI kit)";
 }
-.galleryexp__item:nth-child(8) {
-  background-color: #F5F6F8;
-}
-.galleryexp__item:nth-child(8):after {
-  content: "Atomic Design";
-}
-.galleryexp.active {
-  opacity: 1;
-}
-.galleryexp.active .galleryexp__item:nth-child(1) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
-}
-@media (max-width: 560px) {
-  .galleryexp.active .galleryexp__item:nth-child(1) {
-    -webkit-animation: right-left 1s ease 1 both;
-            animation: right-left 1s ease 1 both;
-  }
-}
-.galleryexp.active .galleryexp__item:nth-child(2) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
-}
-@media (max-width: 560px) {
-  .galleryexp.active .galleryexp__item:nth-child(2) {
-    -webkit-animation: left-right 1s ease 1 both;
-            animation: left-right 1s ease 1 both;
-  }
-}
-.galleryexp.active .galleryexp__item:nth-child(3) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
-}
-.galleryexp.active .galleryexp__item:nth-child(4) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
-}
-.galleryexp.active .galleryexp__item:nth-child(5) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
-}
-.galleryexp.active .galleryexp__item:nth-child(6) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
-}
-@media (max-width: 560px) {
-  .galleryexp.active .galleryexp__item:nth-child(6) {
-    -webkit-animation: left-right 1s ease 1 both;
-            animation: left-right 1s ease 1 both;
-  }
-}
-.galleryexp.active .galleryexp__item:nth-child(7) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
-}
-.galleryexp.active .galleryexp__item:nth-child(8) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
+.galleryexp__item:nth-child(7) img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .galleryexp.active .galleryexp__button {
   -webkit-animation: opacity 1s ease 1 both;
