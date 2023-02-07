@@ -1371,6 +1371,11 @@ p b {
 .galleryexp {
   overflow-x: hidden;
   padding: 10rem 0;
+  opacity: 1;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 @media (max-width: 560px) {
   .galleryexp {
@@ -1522,7 +1527,7 @@ p b {
   }
 }
 .galleryexp__item:nth-child(7) {
-  background-color: #add3c8;
+  background-color: #adbcd3;
 }
 .galleryexp__item:nth-child(7):after {
   content: "Instagram (Figma UI kit)";
@@ -1534,4 +1539,22 @@ p b {
 .galleryexp.active .galleryexp__button {
   -webkit-animation: opacity 1s ease 1 both;
           animation: opacity 1s ease 1 both;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=app.css.map */
