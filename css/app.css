@@ -901,7 +901,7 @@ p b {
   grid-row-start: span 2;
 }
 .gallery__item:nth-child(1):after {
-  content: "Icon set and Guidelines";
+  content: "Icon set and Guidelines - Figma Resource";
 }
 @media (max-width: 900px) {
   .gallery__item:nth-child(1) {
@@ -912,7 +912,7 @@ p b {
   background-color: #ADD1D3;
 }
 .gallery__item:nth-child(2):after {
-  content: "Underground App";
+  content: "Underground App - Personal  Case Study";
 }
 .gallery__item:nth-child(2) img {
   -o-object-fit: contain;
@@ -923,7 +923,7 @@ p b {
   background-color: #f2f3f6;
 }
 .gallery__item:nth-child(3):after {
-  content: "Google Copycat";
+  content: "Google Copycat - Personal";
 }
 .gallery__item:nth-child(3) img {
   -o-object-fit: contain;
@@ -1481,7 +1481,7 @@ p b {
   grid-row-start: span 2;
 }
 .galleryexp__item:nth-child(1):after {
-  content: "Icon set and Guidelines";
+  content: "Icon set and Guidelines - Figma Resource";
 }
 @media (max-width: 900px) {
   .galleryexp__item:nth-child(1) {
@@ -1492,7 +1492,7 @@ p b {
   background-color: #ADD1D3;
 }
 .galleryexp__item:nth-child(2):after {
-  content: "Underground App (Case Study)";
+  content: "Underground App - Case Study";
 }
 .galleryexp__item:nth-child(2) img {
   -o-object-fit: contain;
@@ -1503,14 +1503,14 @@ p b {
   background-color: #f2f3f6;
 }
 .galleryexp__item:nth-child(3):after {
-  content: "Google Copycat (ReactJS)";
+  content: "Google Copycat (ReactJS) - Personal";
 }
 .galleryexp__item:nth-child(3) img {
   -o-object-fit: contain;
      object-fit: contain;
 }
 .galleryexp__item:nth-child(4):after {
-  content: "Notnoise Studio (Branding)";
+  content: "Notnoise Studio (Branding) - Personal";
 }
 .galleryexp__item:nth-child(5):after {
   content: "Pink Floyd (Illustrations)";
@@ -1519,7 +1519,7 @@ p b {
   grid-column-start: span 2;
 }
 .galleryexp__item:nth-child(6):after {
-  content: "Sulcus Band (Graphic and motion design)";
+  content: "Sulcus Band (Graphic and motion design) - Professional";
 }
 @media (max-width: 900px) {
   .galleryexp__item:nth-child(6) {
@@ -1530,7 +1530,7 @@ p b {
   background-color: #adbcd3;
 }
 .galleryexp__item:nth-child(7):after {
-  content: "Instagram (Figma UI kit)";
+  content: "Instagram UI kit - Figma Resource";
 }
 .galleryexp__item:nth-child(7) img {
   -o-object-fit: contain;

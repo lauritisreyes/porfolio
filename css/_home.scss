@@ -232,7 +232,7 @@
         &:nth-child(1) {
             grid-row-start: span 2;
             &:after {
-                content: 'Icon set and Guidelines';
+                content: 'Icon set and Guidelines - Figma Resource';
             }
             @include device (tablet){
                 grid-row-start: span 1;
@@ -241,7 +241,7 @@
         &:nth-child(2) {
             background-color:#ADD1D3;
             &:after {
-                content: 'Underground App';
+                content: 'Underground App - Personal Case Study';
             }
             
             img {
@@ -252,7 +252,7 @@
         &:nth-child(3) {
             background-color:#f2f3f6;
             &:after {
-                content: 'Google Copycat';
+                content: 'Google Copycat - Personal';
             }
             
             img {

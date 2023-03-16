@@ -9,6 +9,7 @@ window.addEventListener('load', function () {
     var links = document.querySelectorAll('a');
     var buttons = document.querySelectorAll('button');
     var start = document.querySelectorAll('.start');
+
     // 🗒 MOUSE MOVEMENT
     var cursorX = 0;
     var cursorY = 0;
@@ -21,6 +22,7 @@ window.addEventListener('load', function () {
         cursorY = clientY;
         mouseMovement();
     });
+
     // 🗒 MOUSE OVER LINKS
     links.forEach(function (eachLink) {
         eachLink.addEventListener('mouseover', function () {
@@ -38,12 +40,14 @@ window.addEventListener('load', function () {
             mouse.classList.remove('scale');
         });
     });
+
     // 🗒 BURGER
     menuBurger.addEventListener('click', function () {
         menuBurger.classList.toggle('active');
         menuUl.classList.toggle('active');
         menu.classList.toggle('active');
     });
+    
     // 🗒 ANIMATIONS WHEN SCROLLING
     window.addEventListener('scroll', function () {
         // 👉🏻 Sections

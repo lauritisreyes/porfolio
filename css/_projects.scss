@@ -273,7 +273,7 @@
         &:nth-child(1) {
             grid-row-start: span 2;
             &:after {
-                content: 'Icon set and Guidelines';
+                content: 'Icon set and Guidelines - Figma Resource';
             }
             @include device (tablet){
                 grid-row-start: span 1;
@@ -282,7 +282,7 @@
         &:nth-child(2) {
             background-color:#ADD1D3;
             &:after {
-                content: 'Underground App (Case Study)';
+                content: 'Underground App - Personal Case Study';
             }
             
             img {
@@ -293,7 +293,7 @@
         &:nth-child(3) {
             background-color:#f2f3f6;
             &:after {
-                content: 'Google Copycat (ReactJS)';
+                content: 'Google Copycat (ReactJS) - Personal';
             }
             
             img {
@@ -302,19 +302,19 @@
         }
         &:nth-child(4) {
             &:after {
-                content: 'Notnoise Studio (Branding)';
+                content: 'Notnoise Studio (Branding) - Personal';
             }
         }
         &:nth-child(5) {
             &:after {
-                content: 'Pink Floyd (Illustrations)';
+                content: 'Pink Floyd (Illustrations) - Personal';
             }
         }
         
         &:nth-child(6) {
             grid-column-start: span 2;
             &:after {
-                content: 'Sulcus Band (Graphic and motion design)';
+                content: 'Sulcus Band (Graphic and motion design) - Professional';
             }
             @include device (tablet){
                 grid-column-start: span 1;
@@ -323,7 +323,7 @@
         &:nth-child(7) {
             background-color: #adbcd3;
             &:after {
-                content: 'Instagram (Figma UI kit)';
+                content: 'Instagram UI kit - Figma Resource';
             }
             img {
                 object-fit: contain;
