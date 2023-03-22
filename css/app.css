@@ -912,7 +912,7 @@ p b {
   background-color: #ADD1D3;
 }
 .gallery__item:nth-child(2):after {
-  content: "Underground App - Personal  Case Study";
+  content: "Underground App - Personal Case Study";
 }
 .gallery__item:nth-child(2) img {
   -o-object-fit: contain;
@@ -1461,6 +1461,7 @@ p b {
   left: 0;
   width: 100%;
   height: 100%;
+  text-align: center;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -1492,7 +1493,7 @@ p b {
   background-color: #ADD1D3;
 }
 .galleryexp__item:nth-child(2):after {
-  content: "Underground App - Case Study";
+  content: "Underground App - Personal Case Study";
 }
 .galleryexp__item:nth-child(2) img {
   -o-object-fit: contain;
@@ -1510,13 +1511,13 @@ p b {
      object-fit: contain;
 }
 .galleryexp__item:nth-child(4):after {
-  content: "Notnoise Studio (Branding) - Personal";
+  content: "Notnoise Studio (Branding) - My Studio";
 }
 .galleryexp__item:nth-child(5):after {
-  content: "Pink Floyd (Illustrations)";
+  content: "Pink Floyd (Illustrations) - Personal";
 }
 .galleryexp__item:nth-child(6) {
-  grid-column-start: span 2;
+  grid-column-start: span 1;
 }
 .galleryexp__item:nth-child(6):after {
   content: "Sulcus Band (Graphic and motion design) - Professional";
@@ -1527,12 +1528,22 @@ p b {
   }
 }
 .galleryexp__item:nth-child(7) {
-  background-color: #adbcd3;
+  background-color: #1B272C;
 }
 .galleryexp__item:nth-child(7):after {
-  content: "Instagram UI kit - Figma Resource";
+  content: "Logotypes - Professional";
 }
 .galleryexp__item:nth-child(7) img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.galleryexp__item:nth-child(8) {
+  background-color: #adbcd3;
+}
+.galleryexp__item:nth-child(8):after {
+  content: "Instagram UI kit - Figma Resource";
+}
+.galleryexp__item:nth-child(8) img {
   -o-object-fit: contain;
      object-fit: contain;
 }
