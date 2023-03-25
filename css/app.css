@@ -923,7 +923,7 @@ p b {
   background-color: #f2f3f6;
 }
 .gallery__item:nth-child(3):after {
-  content: "Google Copycat - Personal";
+  content: "Notnoise Studio - My Design Studio for Musicians";
 }
 .gallery__item:nth-child(3) img {
   -o-object-fit: contain;
@@ -1511,7 +1511,7 @@ p b {
      object-fit: contain;
 }
 .galleryexp__item:nth-child(4):after {
-  content: "Notnoise Studio (Branding) - My Studio";
+  content: "Notnoise Studio - My Design Studio for Musicians";
 }
 .galleryexp__item:nth-child(5):after {
   content: "Pink Floyd (Illustrations) - Personal";
