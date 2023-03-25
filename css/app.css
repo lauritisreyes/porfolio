@@ -925,10 +925,6 @@ p b {
 .gallery__item:nth-child(3):after {
   content: "Notnoise Studio - My Design Studio for Musicians";
 }
-.gallery__item:nth-child(3) img {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .gallery.active {
   opacity: 1;
 }
