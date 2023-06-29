@@ -12,8 +12,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
     transition: none !important;
   }
 }
@@ -91,7 +90,6 @@ form, input, textarea, select, button, label {
   font-family: inherit;
   font-size: inherit;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
   background-color: transparent;
   color: inherit;
@@ -249,8 +247,7 @@ p b {
   mix-blend-mode: difference;
   transform: translateY(-30px) translateX(-30px);
   transition: width 0.4s, height 0.4s, margin-top 0.4s, margin-left 0.4s;
-  -webkit-animation: opacity 0.5s ease 1;
-          animation: opacity 0.5s ease 1;
+  animation: opacity 0.5s ease 1;
 }
 @media (pointer: none) {
   .mouse {
@@ -298,8 +295,7 @@ p b {
   }
 }
 .menu.slidedown {
-  -webkit-animation: slideDown 1s ease 1;
-          animation: slideDown 1s ease 1;
+  animation: slideDown 1s ease 1;
 }
 .menu.light {
   background-color: white;
@@ -401,10 +397,8 @@ p b {
   display: block;
 }
 .menu__link:hover .link__container {
-  -webkit-animation-name: menuAnim;
-          animation-name: menuAnim;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
+  animation-name: menuAnim;
+  animation-duration: 0.2s;
 }
 @media (max-width: 560px) {
   .menu__link {
@@ -512,30 +506,9 @@ p b {
   }
 }
 
-@-webkit-keyframes left-right {
-  from {
-    transform: translateX(-3rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 @keyframes left-right {
   from {
     transform: translateX(-3rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes right-left {
-  from {
-    transform: translateX(3rem);
     opacity: 0;
   }
   to {
@@ -553,29 +526,11 @@ p b {
     opacity: 1;
   }
 }
-@-webkit-keyframes opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes opacity {
   from {
     opacity: 0;
   }
   to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-top {
-  from {
-    bottom: -3rem;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
     opacity: 1;
   }
 }
@@ -589,28 +544,12 @@ p b {
     opacity: 1;
   }
 }
-@-webkit-keyframes menuAnim {
-  from {
-    top: 0;
-  }
-  to {
-    top: -100%;
-  }
-}
 @keyframes menuAnim {
   from {
     top: 0;
   }
   to {
     top: -100%;
-  }
-}
-@-webkit-keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0%);
   }
 }
 @keyframes slideDown {
@@ -643,8 +582,7 @@ p b {
   max-height: 90vh;
   pointer-events: none;
   position: relative;
-  -webkit-animation: fade 1s ease 1;
-          animation: fade 1s ease 1;
+  animation: fade 1s ease 1;
 }
 .intro__down {
   position: absolute;
@@ -665,35 +603,20 @@ p b {
   top: 0;
   left: 0;
   transform-origin: center;
-  -webkit-animation: spiralLoop 4s linear infinite;
-          animation: spiralLoop 4s linear infinite;
+  animation: spiralLoop 4s linear infinite;
 }
 
 .down__comment {
   color: rgb(255, 255, 255);
   font-size: 1rem;
   transition: 0.2s;
-  -webkit-animation: opacityInt 2s infinite ease-in-out;
-          animation: opacityInt 2s infinite ease-in-out;
+  animation: opacityInt 2s infinite ease-in-out;
 }
 .down__chevron {
   width: 24px;
   height: 24px;
   transition: 0.2s;
-  -webkit-animation: opacityInt 2s infinite ease-in-out;
-          animation: opacityInt 2s infinite ease-in-out;
-}
-
-@-webkit-keyframes spiralLoop {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(1.3);
-  }
-  100% {
-    transform: rotate(360deg) scale(1);
-  }
+  animation: opacityInt 2s infinite ease-in-out;
 }
 
 @keyframes spiralLoop {
@@ -707,31 +630,12 @@ p b {
     transform: rotate(360deg) scale(1);
   }
 }
-@-webkit-keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @keyframes fade {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
-  }
-}
-@-webkit-keyframes opacityInt {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes opacityInt {
@@ -923,38 +827,37 @@ p b {
   background-color: #f2f3f6;
 }
 .gallery__item:nth-child(3):after {
-  content: "Notnoise Studio - My Design Studio for Musicians";
+  content: "Freelance Music Projects - Professional";
 }
 .gallery.active {
   opacity: 1;
 }
 .gallery.active .gallery__item:nth-child(1) {
-  -webkit-animation: left-right 1s ease 1 both;
-          animation: left-right 1s ease 1 both;
+  animation: left-right 1s ease 1 both;
 }
 @media (max-width: 560px) {
   .gallery.active .gallery__item:nth-child(1) {
-    -webkit-animation: right-left 1s ease 1 both;
-            animation: right-left 1s ease 1 both;
+    animation: right-left 1s ease 1 both;
   }
 }
 .gallery.active .gallery__item:nth-child(2) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
+  animation: right-left 1s ease 1 both;
 }
 @media (max-width: 560px) {
   .gallery.active .gallery__item:nth-child(2) {
-    -webkit-animation: left-right 1s ease 1 both;
-            animation: left-right 1s ease 1 both;
+    animation: left-right 1s ease 1 both;
   }
 }
 .gallery.active .gallery__item:nth-child(3) {
-  -webkit-animation: right-left 1s ease 1 both;
-          animation: right-left 1s ease 1 both;
+  animation: right-left 1s ease 1 both;
 }
 .gallery.active .gallery__button {
-  -webkit-animation: opacity 1s ease 1 both;
-          animation: opacity 1s ease 1 both;
+  animation: opacity 1s ease 1 both;
+}
+.gallery__comment {
+  padding: 2rem 0;
+  width: 100%;
+  text-align: center;
 }
 
 .experience {
@@ -1081,8 +984,7 @@ p b {
   opacity: 1;
 }
 .experience.active .experience__button {
-  -webkit-animation: opacity 1s ease 1;
-          animation: opacity 1s ease 1;
+  animation: opacity 1s ease 1;
 }
 
 .social {
@@ -1239,8 +1141,7 @@ p b {
   justify-content: center;
   align-items: center;
   text-align: center;
-  -webkit-animation: fade-top 0.5s ease 1;
-          animation: fade-top 0.5s ease 1;
+  animation: fade-top 0.5s ease 1;
 }
 .project__container {
   display: flex;
@@ -1368,10 +1269,8 @@ p b {
   overflow-x: hidden;
   padding: 10rem 0;
   opacity: 1;
-  -webkit-animation-name: fadein;
-          animation-name: fadein;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-name: fadein;
+  animation-duration: 1s;
 }
 @media (max-width: 560px) {
   .galleryexp {
@@ -1527,7 +1426,7 @@ p b {
   background-color: #1B272C;
 }
 .galleryexp__item:nth-child(7):after {
-  content: "Logotypes - Professional";
+  content: "Freelance Music Projects - Professional";
 }
 .galleryexp__item:nth-child(7) img {
   -o-object-fit: contain;
@@ -1544,17 +1443,7 @@ p b {
      object-fit: contain;
 }
 .galleryexp.active .galleryexp__button {
-  -webkit-animation: opacity 1s ease 1 both;
-          animation: opacity 1s ease 1 both;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: opacity 1s ease 1 both;
 }
 
 @keyframes fadein {
