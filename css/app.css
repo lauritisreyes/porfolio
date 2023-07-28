@@ -699,6 +699,55 @@ p b {
   left: 0;
 }
 
+.proud {
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 560px) {
+  .proud {
+    padding: 1rem 0 1rem 0;
+  }
+}
+.proud__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1050px;
+}
+@media (max-width: 560px) {
+  .proud__content {
+    width: 100%;
+  }
+}
+.proud__content .content__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.proud__content .content__list .list__circle {
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  border-radius: 100%;
+  width: 13rem;
+  height: 13rem;
+  padding: 2rem;
+}
+
 .gallery {
   overflow-x: hidden;
   opacity: 0;
@@ -801,22 +850,14 @@ p b {
 .gallery__item:hover:after {
   opacity: 1;
 }
-.gallery__item:nth-child(1) {
-  grid-row-start: span 2;
-}
 .gallery__item:nth-child(1):after {
   content: "Icon set and Guidelines - Figma Resource";
 }
-@media (max-width: 900px) {
-  .gallery__item:nth-child(1) {
-    grid-row-start: span 1;
-  }
-}
 .gallery__item:nth-child(2) {
-  background-color: #ADD1D3;
+  background-color: #C1E4CD;
 }
 .gallery__item:nth-child(2):after {
-  content: "Underground App - Personal Case Study";
+  content: "Loan Calculator Website - Personal Case Study";
 }
 .gallery__item:nth-child(2) img {
   -o-object-fit: contain;
@@ -824,9 +865,15 @@ p b {
   color: green;
 }
 .gallery__item:nth-child(3) {
-  background-color: #f2f3f6;
+  background-color: #ADD1D3;
 }
 .gallery__item:nth-child(3):after {
+  content: "Underground App - Personal Case Study";
+}
+.gallery__item:nth-child(4) {
+  background-color: #ADD1D3;
+}
+.gallery__item:nth-child(4):after {
   content: "Freelance Music Projects - Professional";
 }
 .gallery.active {
@@ -849,6 +896,9 @@ p b {
   }
 }
 .gallery.active .gallery__item:nth-child(3) {
+  animation: left-right 1s ease 1 both;
+}
+.gallery.active .gallery__item:nth-child(4) {
   animation: right-left 1s ease 1 both;
 }
 .gallery.active .gallery__button {
@@ -863,7 +913,7 @@ p b {
 .experience {
   overflow-x: hidden;
   width: 100%;
-  padding-bottom: 15rem;
+  padding: 15rem 0;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -871,7 +921,7 @@ p b {
 }
 @media (max-width: 560px) {
   .experience {
-    padding-bottom: 7.5rem;
+    padding: 7.5rem 0;
   }
 }
 .experience__content {
@@ -930,22 +980,18 @@ p b {
 .experience__icon {
   width: 32px;
   margin-bottom: 1.5rem;
-  opacity: 0;
   transition: 0.5s;
 }
 .experience__title {
   color: grey;
   margin-bottom: 1rem;
   position: relative;
-  opacity: 0;
   transition: 1s;
 }
 .experience__li {
   font-size: 1rem;
   text-align: left;
   position: relative;
-  opacity: 0;
-  transition: 1s;
 }
 @media (max-width: 900px) {
   .experience__li {
@@ -973,18 +1019,6 @@ p b {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-}
-.experience.active .experience__title {
-  opacity: 1;
-}
-.experience.active .experience__li {
-  opacity: 1;
-}
-.experience.active .experience__icon {
-  opacity: 1;
-}
-.experience.active .experience__button {
-  animation: opacity 1s ease 1;
 }
 
 .social {

@@ -141,6 +141,44 @@
     }
 }
 
+// ⬇️ PROUD ⬇️
+
+.proud {
+    width: 100%;
+    padding: 2rem 0 2rem 0;
+    @include flex (row, wrap, center, center);
+    @include device (movil){
+        padding: 1rem 0 1rem 0;
+    }
+    &__content {
+        @include flex (row, wrap, center, center);
+        margin: 0 auto;
+        width: 80%;
+        max-width: 1050px;
+        @include device (movil) {
+            width: 100%;
+        }
+        .content {
+            &__list {
+                @include flex (row, wrap, center, center);
+                width: 100%;
+                gap: 2rem;
+                .list {
+                    &__circle {
+                        text-align: center;
+                        @include flex (row, nowrap, center, center);
+                        color: white;
+                        background-color: black;
+                        border-radius: 100%;
+                        width: 13rem;
+                        height: 13rem;
+                        padding: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
 
 // ⬇️ GALLERY ⬇️
 
@@ -230,18 +268,18 @@
             }
         }
         &:nth-child(1) {
-            grid-row-start: span 2;
+            // grid-row-start: span 2;
             &:after {
                 content: 'Icon set and Guidelines - Figma Resource';
             }
-            @include device (tablet){
-                grid-row-start: span 1;
-            }
+            // @include device (tablet){
+            //     grid-row-start: span 1;
+            // }
         }
         &:nth-child(2) {
-            background-color:#ADD1D3;
+            background-color:#C1E4CD;
             &:after {
-                content: 'Underground App - Personal Case Study';
+                content: 'Loan Calculator Website - Personal Case Study';
             }
             
             img {
@@ -250,7 +288,13 @@
             }
         }
         &:nth-child(3) {
-            background-color:#f2f3f6;
+            background-color:#ADD1D3;
+            &:after {
+                content: 'Underground App - Personal Case Study';
+            }
+        }
+        &:nth-child(4) {
+            background-color:#ADD1D3;
             &:after {
                 content: 'Freelance Music Projects - Professional';
             }
@@ -275,6 +319,9 @@
                     }
                 }
                 &:nth-child(3) {
+                    animation: left-right 1s ease 1 both;
+                }
+                &:nth-child(4) {
                     animation: right-left 1s ease 1 both;
                 }
 
@@ -300,10 +347,10 @@
 .experience {
     overflow-x: hidden;
     width: 100%;
-    padding-bottom: 15rem ;
+    padding: 15rem 0 ;
     @include flex (column, wrap, center, center);
     @include device (movil){
-        padding-bottom: 7.5rem;
+        padding: 7.5rem 0;
     }
     &__content {
         @include flex (column,nowrap, center, center);
@@ -341,22 +388,18 @@
     &__icon {
         width: 32px;
         margin-bottom: 1.5rem;
-        opacity: 0;
         transition: 0.5s;
     }
     &__title {
         color: grey;
         margin-bottom: 1rem;
         position: relative;
-        opacity: 0;
         transition: 1s;
     }
     &__li {
         font-size: 1rem;
         text-align: left;
         position: relative;
-        opacity: 0;
-        transition: 1s;
         @include device (tablet){
             text-align: left;
         }
@@ -378,22 +421,6 @@
     &__container {
         width: 100%;
         @include flex (column, wrap, center, center);
-    }
-    &.active {
-        .experience {
-            &__title {
-                opacity: 1;
-            }
-            &__li {
-                opacity: 1;
-            }
-            &__icon {
-                opacity: 1;
-            }
-            &__button {
-                animation: opacity 1s ease 1;
-            }
-        }
     }
 }
 
