@@ -666,7 +666,7 @@ p b {
 .about__content {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
   margin: 0 auto;
@@ -691,6 +691,10 @@ p b {
   position: relative;
   left: -3rem;
   transition: 0.5s;
+}
+.about__tags {
+  color: grey;
+  text-align: left;
 }
 .about.active .about__title {
   left: 0;
@@ -871,10 +875,10 @@ p b {
   content: "Underground App - Personal Case Study";
 }
 .gallery__item:nth-child(4) {
-  background-color: #ADD1D3;
+  background-color: #f2f3f6;
 }
 .gallery__item:nth-child(4):after {
-  content: "Freelance Music Projects - Professional";
+  content: "Ethereum Code Copycat (ReactJS) - Personal";
 }
 .gallery.active {
   opacity: 1;
@@ -1433,7 +1437,7 @@ p b {
   background-color: #f2f3f6;
 }
 .galleryexp__item:nth-child(3):after {
-  content: "Google Copycat (ReactJS) - Personal";
+  content: "Ethereum Code Copycat (ReactJS) - Personal";
 }
 .galleryexp__item:nth-child(3) img {
   -o-object-fit: contain;
