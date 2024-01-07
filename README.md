@@ -1,7 +1,7 @@
 
 ### Hi, this is my PORFOLIO
 
-- 🖥 I am a Product Designer UI/UX with Frontend skills
+- 🖥 I am a UX Engineer
 
 - 👨‍💻 Visit my live porfolio [https://www.lauritisreyes.com](https://www.lauritisreyes.com)
 
