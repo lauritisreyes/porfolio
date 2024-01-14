@@ -858,15 +858,15 @@ p b {
   content: "Icon set and Guidelines - Figma Resource";
 }
 .gallery__item:nth-child(2) {
-  background-color: #C1E4CD;
+  background-color: #1B272C;
 }
 .gallery__item:nth-child(2):after {
-  content: "Loan Calculator Website - Personal Case Study";
+  content: "Freelance Music Projects";
 }
 .gallery__item:nth-child(2) img {
   -o-object-fit: contain;
      object-fit: contain;
-  color: green;
+  color: #1B272C;
 }
 .gallery__item:nth-child(3) {
   background-color: #ADD1D3;
