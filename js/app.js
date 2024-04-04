@@ -25,6 +25,7 @@ window.addEventListener('load', function () {
 
     // 🗒 MOUSE OVER LINKS
     links.forEach(function (eachLink) {
+        console.log('test')
         eachLink.addEventListener('mouseover', function () {
             mouse.classList.add('scale');
         });
@@ -89,4 +90,5 @@ window.addEventListener('load', function () {
         };
         menuMainPage && mainmenuEffects();
     });
+
 });

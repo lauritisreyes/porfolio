@@ -34,7 +34,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <script defer src="js/app.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TKBL9K89WB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-TKBL9K89WB', {
+            'page_path': window.location.pathname,
+            'page_title': 'Curriculum'
+        });
+    </script>
+
+    <script src="js/analytics.js"></script>
 </head>
+
 <body>
 
     <!-- Mouse -->
@@ -131,16 +147,16 @@
                     <span class="experience__title">Experience</span>
                 </div>
                 <ul class="experience__ul">
-                    <li class="experience__li">Talentum - UX Engineer / Telefónica (Oct 2023 - Currently)</li>
-                    <li class="experience__li">Talentum Lab - UX Designer / Telefónica (Apr 2023 - Sep 2023)</li>
+                    <li class="experience__li">Talentum - UX Engineer / <b>Telefónica</b> (Oct 2023 - Currently)</li>
+                    <li class="experience__li">Talentum Lab - UX Designer / <b>Telefónica</b>(Apr 2023 - Sep 2023)</li>
                     <li class="experience__li">UX UI Designer and Design System / Planout Startup (Dec 2020 - Sep 2022)</li>
                     <li class="experience__li">Graphic Designer / Pool CP (Sep 2020 - Dec 2020)</li>
                     <li class="experience__li">Product Designer Intern / UPM (May 2018 - Aug 2018)</li>
                 </ul>
+                <div class="experience__container">
+                    <a href="assets/docs/cv-laura-reyes.pdf" download class="button experience__button" id="curriculum__button">Download Curriculum</a>
+                </div>
             </div>
-        </div>
-        <div class="experience__container">
-            <a href="assets/docs/cv-laura-reyes.pdf" download class="button experience__button">Download Curriculum</a>
         </div>
     </div>
     

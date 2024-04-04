@@ -100,19 +100,25 @@
 .about {
     overflow-x: hidden;
     width: 100%;
-    padding: 15rem 0 7rem 0;
-    @include flex (row, wrap, flex-start, center);
+    padding: 15rem 0 5rem 0;
+    @include flex (row, nowrap, flex-start, center);
     @include device (movil){
         padding: 7rem 0 3.5rem 0;
     }
     &__content {
-        @include flex (column, wrap, flex-start, flex-start);
+        @include flex (column, nowrap, flex-start, flex-start);
         text-align: center;
         margin: 0 auto;
         width: 50%;
         max-width: 650px;
-        @include device (movil) {
-            width: 100%;
+        gap: 2rem;
+        .content {
+            &__col {
+                @include flex (column, wrap, flex-start, flex-start);
+                flex-grow: 1;
+                background-color: red;
+                height: 200px;
+            }
         }
     }
     &__title {
@@ -129,12 +135,69 @@
         left: -3rem;
         transition: 0.5s;
     }
-    &__tags {
-        color: grey;
-        text-align: left;
-    }
     &.active {
         .about {
+            &__title {
+                left: 0;
+            }
+            &__p {
+                left: 0;
+            }
+        }
+    }
+}
+
+
+// ⬇️ STACK ⬇️
+
+
+.stack {
+    overflow-x: hidden;
+    width: 100%;
+    padding: 5rem 0 7rem 0;
+    @include flex (row, nowrap, flex-start, center);
+    @include device (movil){
+        padding: 7rem 0 3.5rem 0;
+    }
+    &__content {
+        @include flex (column, nowrap, flex-start, flex-start);
+        text-align: center;
+        margin: 0 auto;
+        width: 50%;
+        max-width: 650px;
+        gap: 2rem;
+        .content {
+            &__col {
+                @include flex (column, wrap, flex-start, flex-start);
+                flex-grow: 1;
+                background-color: red;
+                height: 200px;
+            }
+        }
+    }
+    &__title {
+        color: grey;
+        margin-bottom: 1rem;
+        text-align: left;
+        position: relative;
+        left: 3rem;
+        transition: 1s;
+    }
+    &__p {
+        text-align: left;
+        position: relative;
+        left: -3rem;
+        transition: 0.5s;
+    }
+    &__list {
+        .stack {
+            &__item {
+                text-align: left;
+            }
+        }
+    }
+    &.active {
+        .stack {
             &__title {
                 left: 0;
             }
@@ -272,13 +335,9 @@
             }
         }
         &:nth-child(1) {
-            // grid-row-start: span 2;
             &:after {
                 content: 'Icon set and Guidelines - Figma Resource';
             }
-            // @include device (tablet){
-            //     grid-row-start: span 1;
-            // }
         }
         &:nth-child(2) {
             background-color:#1B272C;
@@ -351,12 +410,12 @@
     overflow-x: hidden;
     width: 100%;
     padding: 15rem 0 ;
-    @include flex (column, wrap, center, center);
+    @include flex (column, wrap, flex-start, flex-start);
     @include device (movil){
         padding: 7.5rem 0;
     }
     &__content {
-        @include flex (column,nowrap, center, center);
+        @include flex (column,nowrap, flex-start, flex-start);
         gap: 6rem;
         position: relative;
         width: 50%;
@@ -364,7 +423,7 @@
         @include device (laptop){
             width: 80%;
             max-width: none;
-            @include flex (column, nowrap, center, center);
+            @include flex (column, nowrap, flex-start, flex-start);
         }
         @include device (movil){
             gap: 4rem;
@@ -376,7 +435,7 @@
         gap: 2rem;
     }
     &__col {
-        @include flex (row, nowrap, flex-start, flex-start);
+        @include flex (row, wrap, flex-start, flex-start);
         flex: 1;
         gap: 2rem;
         @include device (laptop){
@@ -422,8 +481,7 @@
         }
     }
     &__container {
-        width: 100%;
-        @include flex (column, wrap, center, center);
+        @include flex (column, wrap, flex-start, center);
     }
 }
 

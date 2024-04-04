@@ -35,7 +35,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <script defer src="js/app.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TKBL9K89WB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-TKBL9K89WB', {
+            'page_path': window.location.pathname,
+            'page_title': 'Main'
+        });
+    </script>
+
+    <script src="js/analytics.js"></script>
 </head>
+
 <body>
 
     <!-- Mouse -->
@@ -123,10 +139,26 @@
 
     <div class="about start" id="about">
         <div class="about__content wrapper__default">
-            <span class="about__title">About</span>
-            <p class="about__p">Hi! My name is Laura and I am a UX Engineer. I combine desing and code habilities to build digital experiences. I have strong passion for innovation and tech and I have special interest in design systems and prototypes. Furthermore, my best strength lies is the hability to create efficient processes between designers and developers. Do not hesitate to contact me for any new challenges.<br/> <b>Note:</b> This portfolio has been coded and designed from scratch.
+                <span class="about__title">About</span>
+                <p class="about__p">Hi! My name is Laura and I am a <b>UX Engineer who creates digital products.</b>I have special interest in innovation and tech with a focus on prototypes and ideation. Furthermore, my greatest strength lies is the ability to create efficient processes between designers and developers thanks to my frontend skills. Do not hesitate to contact me for any new challenges.<br/> <b>Note:</b> This portfolio has been coded and designed from scratch.
+                </p>
+        </div>
+    </div>
+
+    <!-- ⬇️ STACK ⬇️ -->
+
+    <div class="stack start" id="stack">
+        <div class="stack__content wrapper__default">
+            <span class="stack__title">My Stack</span>
+            <p class="stack__p">I am highly versatile to use any type of tool or technology because my goal is the products to be designed and not the tools used, but this is my main stack:
             </p>
-            <p class="about__tags">#reactjs #materialdesign #ios #android #figma #prototypes #innovation #designsystems</p>
+            <ul class="stack__list">
+                <li class="stack__item">🖌️ Figma, Illustrator, Photoshop</li>
+                <li class="stack__item">🚀 After Effects, Protopie</li>
+                <li class="stack__item">🖥️ Web: HTML, CSS, JavaScript, React JS</li>
+                <li class="stack__item">📱 Android with Jetpack Compose</li>
+                <li class="stack__item">📈 Google Analytics</li>
+            </ul>
         </div>
     </div>
 
@@ -135,10 +167,9 @@
     <div class="proud start">
         <div class="wrapper__default proud__content">
             <ul class="content__list">
-                <li class="list__circle">I have more than 8000 downloads in Figma community</li>
+                <li class="list__circle">I have more than 10000 downloads in Figma community</li>
                 <li class="list__circle">I have created and optimized a design system from scratch</li>
                 <li class="list__circle">I have worked designing products throughout the entire life cycle</li>
-                <li class="list__circle">Leaded innitiatives to improve the communication with developers</li>
             </ul>
         </div>
     </div>
@@ -176,6 +207,41 @@
             </div>
             <p class="gallery__comment">More projects are available in an interview!</p>
             <a href="projects.html" class="button gallery__button">See all</a>
+        </div>
+    </div>
+
+
+    <!-- ⬇️ PUBLICATIONS ⬇️ -->
+
+    <div class="publications start" id="publications">
+        <div class="publications__content">
+            <div class="publications__header wrapper__default">
+                <span class="publications__title">Publications</span>
+                <p class="publications__p">I regularly share resources and write articles about concepts that I explore!
+                </p>
+                <ul class="publications__list">
+                    <li>
+                        <!-- Lotties -->
+                        <a href="https://medium.com/design-bootcamp/mastering-lottie-files-a-guide-from-figma-to-react-js-796605283142" class="publications__item" target="_blank" id="lotties_article">
+                            <span class="item__text">🚀 Mastering lottie files. A guide from Figma to React JS</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <!-- Material Design -->
+                        <a href="https://medium.com/design-bootcamp/material-design-in-android-consistency-from-design-to-code-3761e90fc398" class="publications__item" target="_blank" id="material_article">
+                            <span class="item__text">🤖 Material Design in android. Consistency from design to code</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <!-- Units -->
+                        <a href="https://medium.com/design-bootcamp/pixels-and-screen-densities-android-and-ios-1fd0efcfc6d4" class="publications__item" target="_blank" id="units_article">
+                            <span class="item__text">📱 Pixels and screen densities. Android and Ios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
