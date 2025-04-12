@@ -111,7 +111,7 @@
         margin: 0 auto;
         width: 50%;
         max-width: 650px;
-        gap: 2rem;
+        // gap: 2rem;
         .content {
             &__col {
                 @include flex (column, wrap, flex-start, flex-start);
@@ -145,6 +145,15 @@
             }
         }
     }
+    &__note {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        background-color: var(--highlightSectionBkg);
+        text-align: left;
+        font-weight: bold;
+    }
 }
 
 
@@ -165,7 +174,7 @@
         margin: 0 auto;
         width: 50%;
         max-width: 650px;
-        gap: 2rem;
+        // gap: 2rem;
         .content {
             &__col {
                 @include flex (column, wrap, flex-start, flex-start);
@@ -290,6 +299,9 @@
         object-fit: cover;
         position: relative;
         transition: 0.5s;
+        &.contain {
+            object-fit: contain;
+        }
     }
     &__title {
         color: grey;
@@ -340,9 +352,9 @@
             }
         }
         &:nth-child(2) {
-            background-color:#1B272C;
+            background-color:#e6edf0;
             &:after {
-                content: 'Freelance Music Projects';
+                content: 'Design prototypes explorations';
             }
             img {
                 object-fit: contain;
@@ -350,15 +362,9 @@
             }
         }
         &:nth-child(3) {
-            background-color:#ADD1D3;
+            background-color:#cce3e1;
             &:after {
-                content: 'Underground App - Personal Case Study';
-            }
-        }
-        &:nth-child(4) {
-            background-color:#f2f3f6;
-            &:after {
-                content: 'Ethereum Code Copycat (ReactJS) - Personal';
+                content: 'Units App - Available in the App Store';
             }
         }
 
@@ -381,10 +387,12 @@
                     }
                 }
                 &:nth-child(3) {
+                    grid-column-end: span 2;
                     animation: left-right 1s ease 1 both;
-                }
-                &:nth-child(4) {
-                    animation: right-left 1s ease 1 both;
+                    @include device (movil) {
+                        animation: right-left 1s ease 1 both;
+                        grid-column-end: span 1;
+                    }
                 }
 
             }
@@ -394,9 +402,13 @@
         }
     }
     &__comment {
-        padding: 2rem 0;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        background-color: var(--highlightSectionBkg);
+        border-radius: 1rem;
+        text-align: left;
+        font-weight: bold;
         width: 100%;
-        text-align: center;
     }
 
 }
@@ -467,8 +479,8 @@
         }
     }
     &__button {
-        color: #309ba0;
-        border: 1px solid #309ba0;
+        color: var(--link);
+        border: 1px solid #3066a0;
         // border-radius: 4rem;
         padding: 0.3rem 2rem;
         margin-top: 5rem;
@@ -559,9 +571,9 @@
         bottom: 2rem;
         font-weight: bold;
         transition: right 1s, opacity 1s;
-        color: #309ba0;
+        color: var(--link);
         &:hover {
-            color: #17686c;
+            color: var(--linkHover);
         }
         @include device (laptop){
             position: relative;

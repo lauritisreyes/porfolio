@@ -104,9 +104,9 @@ p {
 
 .button {
     font-weight: bold;
-    color: #309ba0;
+    color: var(--link);
     &:hover {
-        color: #17686c;
+        color: var(--linkHover);
     }
 }
 
