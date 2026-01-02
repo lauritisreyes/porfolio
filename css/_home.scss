@@ -109,7 +109,7 @@
         @include flex (column, nowrap, flex-start, flex-start);
         text-align: flex-start;
         margin: 0 auto;
-        max-width: 650px;
+        max-width: 800px;
         gap: 1rem;
         .content {
             &__col {
@@ -192,6 +192,7 @@
         text-align: left;
         position: relative;
         transition: 1s;
+        padding-bottom: 1rem;
     }
     &__p {
         text-align: left;
@@ -210,7 +211,8 @@
         background-color:#d7eef8;
     }
     &__info {
-         flex: 1;
+        flex: 1;
+        @include flex (column, wrap, flex-start, flex-start);
     }
     
    
@@ -220,7 +222,7 @@
 // ⬇️ GALLERY ⬇️
 .gallery {
     overflow-x: hidden;
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     padding: 10rem 0;
     transition: opacity 1s;
@@ -243,7 +245,7 @@
         }
     }
     &__container {
-        @include flex (column, nowrap, center, center);
+        @include flex (column, nowrap, flex-start, flex-start);
         position: relative;
         gap: 2rem;
         width: 100%;
@@ -271,8 +273,8 @@
         color: grey;
         transform: rotate(-90deg);
         transform-origin: top left;
-        bottom: -2rem;
-        left: -4rem;
+        bottom: -2.25rem;
+        left: -5rem;
         display: block;
         position: absolute;
         transition: bottom 2s;
@@ -314,8 +316,12 @@
         }
         &:nth-child(1) {
             background-color:#cce3e1;
+            grid-column-end: span 2;
             &:after {
                 content: 'Units App - Available in the App Store';
+            }
+            @include device (movil) {
+                grid-column-end: span 1;
             }
         }
         &:nth-child(2) {
@@ -326,30 +332,6 @@
 
     }
 
-    &.active {
-        opacity: 1;
-        .gallery {
-            &__item {
-                &:nth-child(1) {
-                    grid-column-end: span 2;
-                    animation: left-right 1s ease 1 both;
-                    @include device (movil) {
-                        animation: right-left 1s ease 1 both;
-                        grid-column-end: span 1;
-                    }
-                }
-                &:nth-child(2) {
-                    animation: left-right 1s ease 1 both;
-                    @include device (movil) {
-                        animation: right-left 1s ease 1 both;
-                    }
-                }
-            }
-            &__button {
-                animation: opacity 1s ease 1 both;
-            }
-        }
-    }
     &__comment {
         margin-top: 1rem;
         padding: 1rem 2rem;

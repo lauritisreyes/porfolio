@@ -673,7 +673,7 @@ p b {
   align-items: flex-start;
   text-align: flex-start;
   margin: 0 auto;
-  max-width: 650px;
+  max-width: 800px;
   gap: 1rem;
 }
 .about__content .content__col {
@@ -768,6 +768,7 @@ p b {
   text-align: left;
   position: relative;
   transition: 1s;
+  padding-bottom: 1rem;
 }
 .workingon__p {
   text-align: left;
@@ -787,11 +788,15 @@ p b {
 }
 .workingon__info {
   flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .gallery {
   overflow-x: hidden;
-  opacity: 0;
+  opacity: 1;
   width: 100%;
   padding: 10rem 0;
   transition: opacity 1s;
@@ -827,8 +832,8 @@ p b {
 .gallery__container {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
   gap: 2rem;
   width: 100%;
@@ -862,8 +867,8 @@ p b {
   color: grey;
   transform: rotate(-90deg);
   transform-origin: top left;
-  bottom: -2rem;
-  left: -4rem;
+  bottom: -2.25rem;
+  left: -5rem;
   display: block;
   position: absolute;
   transition: bottom 2s;
@@ -909,36 +914,18 @@ p b {
 }
 .gallery__item:nth-child(1) {
   background-color: #cce3e1;
+  grid-column-end: span 2;
 }
 .gallery__item:nth-child(1):after {
   content: "Units App - Available in the App Store";
 }
-.gallery__item:nth-child(2):after {
-  content: "Icon set and Guidelines - Figma Resource";
-}
-.gallery.active {
-  opacity: 1;
-}
-.gallery.active .gallery__item:nth-child(1) {
-  grid-column-end: span 2;
-  animation: left-right 1s ease 1 both;
-}
 @media (max-width: 560px) {
-  .gallery.active .gallery__item:nth-child(1) {
-    animation: right-left 1s ease 1 both;
+  .gallery__item:nth-child(1) {
     grid-column-end: span 1;
   }
 }
-.gallery.active .gallery__item:nth-child(2) {
-  animation: left-right 1s ease 1 both;
-}
-@media (max-width: 560px) {
-  .gallery.active .gallery__item:nth-child(2) {
-    animation: right-left 1s ease 1 both;
-  }
-}
-.gallery.active .gallery__button {
-  animation: opacity 1s ease 1 both;
+.gallery__item:nth-child(2):after {
+  content: "Icon set and Guidelines - Figma Resource";
 }
 .gallery__comment {
   margin-top: 1rem;
