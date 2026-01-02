@@ -125,24 +125,12 @@
         margin-bottom: 1rem;
         text-align: left;
         position: relative;
-        left: 3rem;
         transition: 1s;
     }
     &__p {
         text-align: left;
         position: relative;
-        left: -3rem;
         transition: 0.5s;
-    }
-    &.active {
-        .about {
-            &__title {
-                left: 0;
-            }
-            &__p {
-                left: 0;
-            }
-        }
     }
     &__note {
         width: 100%;

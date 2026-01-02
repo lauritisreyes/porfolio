@@ -690,20 +690,12 @@ p b {
   margin-bottom: 1rem;
   text-align: left;
   position: relative;
-  left: 3rem;
   transition: 1s;
 }
 .about__p {
   text-align: left;
   position: relative;
-  left: -3rem;
   transition: 0.5s;
-}
-.about.active .about__title {
-  left: 0;
-}
-.about.active .about__p {
-  left: 0;
 }
 .about__note {
   width: 100%;
