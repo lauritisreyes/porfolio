@@ -121,11 +121,12 @@
         }
     }
     &__title {
-        color: grey;
+        color: rgb(0, 0, 0);
         margin-bottom: 1rem;
         text-align: left;
         position: relative;
-        transition: 1s;
+        font-size: 2rem;
+        font-weight: bold;
     }
     &__p {
         text-align: left;
@@ -175,12 +176,14 @@
         }
     }
     &__title {
-        color: grey;
+        color: rgb(0, 0, 0);
         margin-bottom: 1rem;
         text-align: left;
         position: relative;
         transition: 1s;
         padding-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
     }
     &__p {
         text-align: left;
@@ -197,6 +200,38 @@
         width: 100%;
         flex: 1;
         background-color:#d7eef8;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include flex (column, nowrap, center, center);
+            background-color: #16191c95;
+            color: white;
+            pointer-events: none;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        &:hover {
+            .gallery__img{
+                transform: scale(1.2);
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:nth-child(1) {
+            background-color:#adbcd3;
+            grid-column-end: span 2;
+            &:after {
+                content: 'Coming soon';
+            }
+            @include device (movil) {
+                grid-column-end: span 1;
+            }
+        }
     }
     &__info {
         flex: 1;
@@ -258,20 +293,11 @@
         }
     }
     &__title {
-        color: grey;
-        transform: rotate(-90deg);
-        transform-origin: top left;
-        bottom: -2.25rem;
-        left: -5rem;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 2rem;
         display: block;
-        position: absolute;
-        transition: bottom 2s;
-        @include device (laptop){
-            position: relative;
-            top: 0;
-            left: 0;
-            transform: rotate(0);
-        }
+        margin-bottom: 1rem;
     }
     &__item {
         position: relative;
