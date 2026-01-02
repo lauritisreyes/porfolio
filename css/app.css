@@ -707,6 +707,14 @@ p b {
   text-align: left;
   font-weight: bold;
 }
+.about__list {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
 
 .workingon {
   overflow-x: hidden;
@@ -876,11 +884,18 @@ p b {
 }
 .gallery__button {
   margin-top: 5rem;
+  color: var(--link);
+  border: 1px solid #3066a0;
+  padding: 0.3rem 2rem;
 }
 @media (max-width: 560px) {
   .gallery__button {
     margin-top: 2rem;
   }
+}
+.gallery__button:hover {
+  border: 1px solid #17686c;
+  color: #17686c;
 }
 .gallery__img {
   height: 100%;

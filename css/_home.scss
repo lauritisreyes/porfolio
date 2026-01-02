@@ -142,6 +142,11 @@
         text-align: left;
         font-weight: bold;
     }
+    &__list {
+        margin-top: 2rem;
+        @include flex (row, wrap, flex-start, flex-start);
+        gap: 1rem;
+    }
 }
 
 
@@ -279,8 +284,16 @@
     }
     &__button {
         margin-top: 5rem;
+        color: var(--link);
+        border: 1px solid #3066a0;
+        // border-radius: 4rem;
+        padding: 0.3rem 2rem;
         @include device (movil){
             margin-top: 2rem;
+        }
+        &:hover {
+            border: 1px solid #17686c;
+            color: #17686c;
         }
     }
     &__img {
