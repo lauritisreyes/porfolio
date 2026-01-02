@@ -183,8 +183,7 @@
         @include flex (row, nowrap, flex-start, flex-start);
         gap: 2rem;
         @include device (movil){
-            gap: 4rem;
-            width: 100%;
+            @include flex (column, wrap, flex-start, flex-start);
         }
     }
     &__title {

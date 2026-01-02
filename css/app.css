@@ -756,8 +756,10 @@ p b {
 }
 @media (max-width: 560px) {
   .workingon__container {
-    gap: 4rem;
-    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 .workingon__title {
