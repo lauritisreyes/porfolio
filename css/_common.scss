@@ -37,8 +37,6 @@ p {
     &__menu {
         margin: 0 auto;
         width: 100%;
-        // width: 90%;
-        // max-width: 1500px;
     }
     &__header {
         margin: 0 auto;
@@ -107,46 +105,6 @@ p {
     color: var(--link);
     &:hover {
         color: var(--linkHover);
-    }
-}
-
-
-
-// ⬇️ MOUSE ⬇️
-
-.mouse {
-    @media (pointer: none ) {
-        display: none;
-    }
-    pointer-events: none;
-    z-index: 6;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-top: -6px;
-    margin-left: -6px;
-    background-color: var(--white);
-    mix-blend-mode: difference;
-    transform: translateY(-30px) translateX(-30px) ;
-    transition: width .4s,
-                height .4s,
-                margin-top .4s,
-                margin-left .4s,;
-    animation: opacity 0.5s ease 1;
-    &.scale{
-        width: 32px;
-        height: 32px;
-        margin-top:-16px;
-        margin-left:-16px;
-    }
-    @media (pointer: none ) {
-        display: none;
-    }
-    @media (hover: none ) {
-        display: none;
     }
 }
 

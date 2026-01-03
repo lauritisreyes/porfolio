@@ -9,50 +9,9 @@ window.addEventListener ( 'load', ( ) =>{
     const menu = ( document.querySelector('.menu') as HTMLDivElement)
     const menuUl = ( document.querySelector('.menu__ul') as HTMLElement)
 
-    const mouse = (document.querySelector ('.mouse') as HTMLDivElement)
     const social = (document.querySelector ('.social') as HTMLDivElement)
-    const links = document.querySelectorAll <HTMLLinkElement> ('a')
-    const buttons = document.querySelectorAll <HTMLButtonElement> ('button')
+  
     const start = document.querySelectorAll <HTMLLIElement> ('.start')
-
-
-
-    // 🗒 MOUSE MOVEMENT
-
-    let cursorX = 0
-    let cursorY = 0
-        
-    let mouseMovement = ()=>{
-        mouse.style.transform = `translateX(${cursorX}px) translateY(${cursorY}px` 
-    }
-
-    window.addEventListener ( 'mousemove', ( { clientX, clientY } ) => {
-        cursorX = clientX
-        cursorY = clientY
-        mouseMovement()
-    })
-
-
-
-    // 🗒 MOUSE OVER LINKS
-
-    links.forEach ( eachLink => {
-        eachLink.addEventListener ('mouseover', ()=> {
-            mouse.classList.add('scale')
-        })
-        eachLink.addEventListener ('mouseout', ()=> {
-            mouse.classList.remove('scale')
-        })
-    })
-
-    buttons.forEach ( eachLink => {
-        eachLink.addEventListener ('mouseover', ()=> {
-            mouse.classList.add('scale')
-        })
-        eachLink.addEventListener ('mouseout', ()=> {
-            mouse.classList.remove('scale')
-        })
-    })
 
     // 🗒 BURGER
     menuBurger.addEventListener ('click', () => {
