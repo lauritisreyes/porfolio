@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --background-primary: #16171b;
   --button-primary:#16171b;
@@ -19,7 +18,6 @@
     transition: none !important;
   }
 }
-/* Reseteamos los margin y paddings de todas las etiquetas */
 * {
   margin: 0;
   padding: 0;
@@ -28,18 +26,14 @@
   vertical-align: baseline;
 }
 
-/* Evitamos problemas con las imagenes */
 img, picture, video, iframe, figure {
   max-width: 100%;
   width: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  object-fit: cover;
+  object-position: center center;
 }
 
-/* Reseteamos los enlaces para funcionar como cajas... */
 a {
   display: block;
   text-decoration: none;
@@ -47,22 +41,18 @@ a {
   font-size: inherit;
 }
 
-/* ... excepto los que se encuentran en párrafos */
 p a {
   display: inline;
 }
 
-/* Quitamos los puntos de los <li> */
 li {
   list-style-type: none;
 }
 
-/* Configuramos anclas suaves */
 html {
   scroll-behavior: smooth;
 }
 
-/* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   font-size: 1em;
   font-weight: inherit;
@@ -71,40 +61,32 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   color: inherit;
 }
 
-/* Evitamos problemas con los pseudoelementos de quotes */
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
 
-/* Nivelamos problemas de tipografías y colocación de formularios */
 form, input, textarea, select, button, label {
   font-family: inherit;
   font-size: inherit;
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   background-color: transparent;
   color: inherit;
   display: block;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
-/* Reseteamos las tablas */
 table, tr, td {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* Evitamos problemas con los SVG */
 svg {
   width: 100%;
   display: block;
   fill: currentColor;
 }
 
-/* Configuramos la tipografía para toda la web */
 body {
   min-height: 100vh;
   font-size: 100%;
@@ -613,7 +595,7 @@ p b {
 }
 @media (max-width: 560px) {
   .about {
-    padding: 2everem 0 3.5rem 0;
+    padding: 7rem 0 3.5rem 0;
   }
 }
 .about__content {
@@ -660,7 +642,7 @@ p b {
 .about__list {
   margin-top: 2rem;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1rem;
@@ -857,14 +839,12 @@ p b {
 }
 .gallery__img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
   transition: 0.5s;
 }
 .gallery__img.contain {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .gallery__title {
   color: rgb(0, 0, 0);
@@ -904,20 +884,54 @@ p b {
 .gallery__item:hover:after {
   opacity: 1;
 }
-.gallery__item:nth-child(1) {
-  background-color: #cce3e1;
-  grid-column-end: span 2;
+.gallery__unverified {
+  background-color: #1e1e1e;
 }
-.gallery__item:nth-child(1):after {
-  content: "Units App - Available in the App Store";
+.gallery__unverified:after {
+  content: 'Currently developing "Unverified Human"';
+}
+.gallery__palo {
+  background-color: white;
+}
+.gallery__palo:after {
+  content: "Palo App - Available in Google Play";
+}
+.gallery__units {
+  background-color: #cce3e1;
+}
+.gallery__units:after {
+  content: "Units App - Available in Google Play";
+}
+.gallery__icons:after {
+  content: "Icon set and Guidelines - Figma Resource";
+}
+.gallery__row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
 }
 @media (max-width: 560px) {
-  .gallery__item:nth-child(1) {
-    grid-column-end: span 1;
+  .gallery__row {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
-.gallery__item:nth-child(2):after {
-  content: "Icon set and Guidelines - Figma Resource";
+.gallery__row .gallery__item {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 560px) {
+  .gallery__row .gallery__item {
+    flex: none;
+  }
+}
+.gallery__constellation {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .gallery__comment {
   margin-top: 1rem;
@@ -1374,8 +1388,7 @@ p b {
 }
 .galleryexp__img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
   transition: 0.5s;
 }
@@ -1403,6 +1416,11 @@ p b {
   right: 0;
   overflow: hidden;
   transition: opacity 1s;
+}
+@media (max-width: 560px) {
+  .galleryexp__item {
+    height: 300px;
+  }
 }
 .galleryexp__item:after {
   content: "";
@@ -1446,8 +1464,7 @@ p b {
   content: "Underground App - Personal Case Study";
 }
 .galleryexp__item:nth-child(2) img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   color: green;
 }
 .galleryexp__item:nth-child(3) {
@@ -1457,8 +1474,7 @@ p b {
   content: "Units App - Available in the App Store";
 }
 .galleryexp__item:nth-child(3) img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .galleryexp__item:nth-child(4) {
   background-color: #f2f3f6;
@@ -1487,8 +1503,7 @@ p b {
   content: "Freelance Music Projects - Professional";
 }
 .galleryexp__item:nth-child(7) img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .galleryexp__item:nth-child(8) {
   background-color: #adbcd3;
@@ -1497,8 +1512,16 @@ p b {
   content: "Instagram UI kit - Figma Resource";
 }
 .galleryexp__item:nth-child(8) img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
+}
+.galleryexp__item:nth-child(9) {
+  background-color: white;
+}
+.galleryexp__item:nth-child(9):after {
+  content: "Palo App - Available in Google Play";
+}
+.galleryexp__item:nth-child(9) img {
+  object-fit: contain;
 }
 .galleryexp.active .galleryexp__button {
   animation: opacity 1s ease 1 both;
@@ -1528,4 +1551,6 @@ p b {
   to {
     opacity: 1;
   }
-}/*# sourceMappingURL=app.css.map */
+}
+
+/*# sourceMappingURL=app.css.map */

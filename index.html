@@ -35,6 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <script defer src="js/app.js"></script>
+    <script defer src="js/constellation.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TKBL9K89WB"></script>
@@ -168,10 +169,22 @@
             <div class="gallery__container">
                 <div class="gallery__grid">
 
-                    <!-- 🎨 Units App project -->
-                    <a href="https://play.google.com/store/apps/details?id=com.laura.units&pcampaignid=web_share" class="background__grey gallery__item gallery__units">
-                        <img src="assets/general/units-web.png" alt="Underground App" class="gallery__img contain">
-                    </a>
+                    <!-- 🎨 Unverified Human (in progress) -->
+                    <div class="gallery__item gallery__unverified">
+                        <canvas class="gallery__constellation" aria-label="Floating constellation illustration"></canvas>
+                    </div>
+
+                    <div class="gallery__row">
+                        <!-- 🎨 Palo App project -->
+                        <a href="https://play.google.com/store/apps/details?id=com.laura.calisthenics&hl=es_419" class="gallery__item gallery__palo">
+                            <img src="assets/palo/palo-web.png" alt="Palo App" class="gallery__img contain">
+                        </a>
+
+                        <!-- 🎨 Units App project -->
+                        <a href="https://play.google.com/store/apps/details?id=com.laura.units&pcampaignid=web_share" class="background__grey gallery__item gallery__units">
+                            <img src="assets/general/units-web.png" alt="Units App" class="gallery__img contain">
+                        </a>
+                    </div>
 
                     <!-- 🎨 Icons project -->
                     <a href="icons.html" class="gallery__item gallery__icons">
@@ -207,7 +220,7 @@
         <div class="social__content wrapper__menu">
 
             <!-- 🧩 Relocate -->
-            <span class="social__location">Porfolio made from scratch</span>
+            <span class="social__location"></span>
 
 
             <!-- 🧩 Mail -->

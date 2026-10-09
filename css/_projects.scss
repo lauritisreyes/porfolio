@@ -179,7 +179,7 @@
     }
 }
 
-// ⬇️ galleryexp ⬇️
+// ⬇️ EXPERIENCE ⬇️
 
 .galleryexp {
     overflow-x: hidden;
@@ -256,6 +256,9 @@
         right: 0;
         overflow: hidden;
         transition: opacity 1s;
+         @include device (movil){
+            height: 300px;
+        }
         &:after {
             content: '';
             position: absolute;
@@ -348,6 +351,15 @@
                 object-fit: contain;
             }
         }
+        &:nth-child(9) {
+            background-color: white;
+            &:after {
+                content: 'Palo App - Available in Google Play';
+            }
+            img {
+                object-fit: contain;
+            }
+        }
 
     }
 
@@ -361,7 +373,7 @@
 
 }
 
-// ⬇️ gallerypublications ⬇️
+// ⬇️ PUBLICATIONS ⬇️
 
 .publications {
     &__content {
