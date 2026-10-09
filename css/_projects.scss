@@ -273,13 +273,26 @@
             height: 100%;
             text-align: center;
             @include flex (column, nowrap, center, center);
-            background-color: #16191c95;
+            padding: 0 1rem;
+            background-color: #16191ca6;
             color: white;
             pointer-events: none;
             opacity: 0;
             transition: 0.5s;
+            // No hover on touch screens: the title is always visible as a bottom bar
+            @include device (movil){
+                top: auto;
+                bottom: 0;
+                height: auto;
+                padding: 0.75rem 1rem;
+                background-color: #16191ccc;
+                font-size: 0.875rem;
+                line-height: 150%;
+                text-align: center;
+                opacity: 1;
+            }
         }
-        &:hover {
+        &:hover, &:focus-visible {
             .galleryexp__img{
                 transform: scale(1.2);
             }
@@ -310,7 +323,7 @@
         &.galleryexp__units {
             background-color:#f2f3f6;
             &:after {
-                content: 'Units App - Available in the App Store';
+                content: 'Units App - Available in Google Play';
             }
             
             img {

@@ -5,14 +5,16 @@
 
 // ⬇️ MAIN TEXT STYLES ⬇️
 
-h2 {
+// Page title
+h1 {
     font-family: var(--font-secondary);
     font-size: 2rem;
     font-weight: bold;
     line-height: 150%;
 }
 
-h3 {
+// Section titles
+h2 {
     font-family: var(--font-primary);
     font-size: 1rem;
     font-weight: 600;
@@ -27,6 +29,138 @@ p {
         font-weight: bold;
     }
 }
+
+
+
+// ⬇️ ACCESSIBILITY ⬇️
+
+// Hidden visually, still read by screen readers
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Only appears when reached with the keyboard
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    background-color: var(--white);
+    color: var(--link);
+    font-weight: bold;
+    line-height: 150%;
+    transform: translateY(-200%);
+    &:focus {
+        transform: translateY(0);
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+}
+
+// 💬 Small label shown on hover or keyboard focus (social links, animations toggle)
+.chip {
+    position: absolute;
+    z-index: 1;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
+    background-color: #16171bb3;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 150%;
+    white-space: nowrap;
+    // Hidden chips don't catch the pointer
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0s 0.2s;
+    // Invisible bridge over the gap, so the pointer can move onto the chip without losing it
+    &:after {
+        content: '';
+        position: absolute;
+    }
+}
+:hover > .chip, :focus-visible > .chip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s, visibility 0s;
+}
+// Escape hides the chips until the pointer or focus moves again (js/motion.js)
+.chips-dismissed .chip {
+    visibility: hidden;
+    opacity: 0;
+}
+
+// ⏯ Animations toggle (js/motion.js)
+.motion-toggle {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 5;
+    @include flex (row, nowrap, center, center);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #16171bb3;
+    color: var(--white);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    @include device (movil){
+        right: 1rem;
+        bottom: 1rem;
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+    }
+    // Chip to the left, the button sits on the right edge
+    .chip {
+        right: calc(100% + 0.5rem);
+        top: 50%;
+        transform: translateY(-50%);
+        &:after {
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            width: 0.5rem;
+        }
+    }
+    &:hover {
+        background-color: #16171be6;
+    }
+    // White halo so the focus ring reads on dark and light backgrounds
+    &:focus-visible {
+        box-shadow: 0 0 0 3px var(--white);
+    }
+}
+
+// Looping animations stop when paused
+.motion-off {
+    scroll-behavior: auto;
+    .intro__spiral, .down__comment, .down__chevron {
+        animation: none;
+    }
+}
+
+// On dark backgrounds the focus ring turns white
+.intro, .menu:not(.light):not(.active) {
+    :focus-visible {
+        outline-color: var(--white);
+    }
+}
+
 
 
 
@@ -155,8 +289,14 @@ p {
             background-color: transparent;
         }
     }
+    // Logo name, only for screen readers
     &__name {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
     }
     &__content {
         @include flex (row, nowrap, space-between, center);
@@ -189,9 +329,10 @@ p {
             top: 0rem;
             left: 0;
             opacity: 0;
+            visibility: hidden;
             padding-left: 2rem;
             z-index: 3;
-            transition: 0.5ss;
+            transition: opacity 0.5s, visibility 0s 0.5s;
             pointer-events: none;
         }
     }
@@ -206,7 +347,9 @@ p {
     }
     &__link {
         color: white;
+        line-height: 1;
         height: 1rem;
+        height: 1lh;
         position: relative;
         overflow: hidden;
         margin-left: 1rem;
@@ -218,7 +361,6 @@ p {
             }
         }
         @include device (movil) {
-            height: 1rem;
             color: black;
         }
     }
@@ -290,6 +432,8 @@ p {
             &__ul {
                 left: 0;
                 opacity: 1;
+                visibility: visible;
+                transition: opacity 0.5s, visibility 0s;
                 pointer-events: all;
                 padding-left: 2rem;
             }

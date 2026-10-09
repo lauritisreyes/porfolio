@@ -4,7 +4,10 @@ window.addEventListener('load', function () {
     if (!canvas) return;
 
     var ctx = canvas.getContext('2d');
-    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Paused by the animations toggle (js/motion.js)
+    function paused() {
+        return document.documentElement.classList.contains('motion-off');
+    }
 
     // Seeded random so the illustration always looks the same
     var seed = 7;
@@ -77,7 +80,7 @@ window.addEventListener('load', function () {
         canvas.width = Math.round(width * dpr);
         canvas.height = Math.round(height * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        if (reducedMotion) draw(0);
+        if (paused()) draw(lastTime);
     }
 
     // 👉🏻 Drawing
@@ -114,12 +117,21 @@ window.addEventListener('load', function () {
 
     // 👉🏻 Only animate while visible
     var frame = null;
+    var visible = false;
+    var lastTime = 0;
+    var offset = 0;
     function loop(time) {
-        draw(time);
+        lastTime = time - offset;
+        draw(lastTime);
         frame = requestAnimationFrame(loop);
     }
     function start() {
-        if (!frame && !reducedMotion) frame = requestAnimationFrame(loop);
+        if (frame || paused()) return;
+        // Resume from the frozen position instead of jumping
+        frame = requestAnimationFrame(function (time) {
+            offset = time - lastTime;
+            loop(time);
+        });
     }
     function stop() {
         if (frame) cancelAnimationFrame(frame);
@@ -131,9 +143,19 @@ window.addEventListener('load', function () {
 
     if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
-            entries[0].isIntersecting ? start() : stop();
+            visible = entries[0].isIntersecting;
+            visible ? start() : stop();
         }).observe(canvas);
     } else {
+        visible = true;
         start();
     }
+
+    document.addEventListener('motionchange', function () {
+        if (paused()) {
+            stop();
+        } else if (visible) {
+            start();
+        }
+    });
 });

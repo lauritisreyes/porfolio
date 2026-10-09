@@ -8,10 +8,28 @@ window.addEventListener('load', function () {
     var start = document.querySelectorAll('.start');
 
     // 🗒 BURGER
+    var toggleMenu = function (open) {
+        menuBurger.classList.toggle('active', open);
+        menuUl.classList.toggle('active', open);
+        menu.classList.toggle('active', open);
+        menuBurger.setAttribute('aria-expanded', String(open));
+        menuBurger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        // While the menu covers the page, the content behind can't be reached with Tab
+        document.querySelectorAll('main, footer').forEach(function (el) { el.inert = open; });
+    };
     menuBurger.addEventListener('click', function () {
-        menuBurger.classList.toggle('active');
-        menuUl.classList.toggle('active');
-        menu.classList.toggle('active');
+        toggleMenu(!menu.classList.contains('active'));
+    });
+    // 👉🏻 The burger menu only exists on mobile: close it when the screen gets wider
+    window.matchMedia('(min-width: 561px)').addEventListener('change', function (event) {
+        if (event.matches) toggleMenu(false);
+    });
+    // 👉🏻 Close with Escape and give focus back to the burger
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && menu.classList.contains('active')) {
+            toggleMenu(false);
+            menuBurger.focus();
+        }
     });
     
     // 🗒 ANIMATIONS WHEN SCROLLING

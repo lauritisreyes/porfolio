@@ -14,11 +14,31 @@ window.addEventListener ( 'load', ( ) =>{
     const start = document.querySelectorAll <HTMLLIElement> ('.start')
 
     // 🗒 BURGER
-    menuBurger.addEventListener ('click', () => {
-        menuBurger.classList.toggle ('active')
-        menuUl.classList.toggle ('active')
-        menu.classList.toggle ('active')
+    const toggleMenu = ( open: boolean ) => {
+        menuBurger.classList.toggle ('active', open)
+        menuUl.classList.toggle ('active', open)
+        menu.classList.toggle ('active', open)
+        menuBurger.setAttribute ('aria-expanded', String (open))
+        menuBurger.setAttribute ('aria-label', open ? 'Close menu' : 'Open menu')
+        // While the menu covers the page, the content behind can't be reached with Tab
+        document.querySelectorAll <HTMLElement> ('main, footer').forEach ( el => el.inert = open )
+    }
 
+    menuBurger.addEventListener ('click', () => {
+        toggleMenu (!menu.classList.contains ('active'))
+    })
+
+    // 👉🏻 The burger menu only exists on mobile: close it when the screen gets wider
+    window.matchMedia ('(min-width: 561px)').addEventListener ('change', ( event ) => {
+        if ( event.matches ) toggleMenu (false)
+    })
+
+    // 👉🏻 Close with Escape and give focus back to the burger
+    document.addEventListener ('keydown', ( event ) => {
+        if ( event.key === 'Escape' && menu.classList.contains ('active') ) {
+            toggleMenu (false)
+            menuBurger.focus ()
+        }
     })
 
 

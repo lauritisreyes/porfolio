@@ -221,7 +221,7 @@
             width: 100%;
             height: 100%;
             @include flex (column, nowrap, center, center);
-            background-color: #16191c95;
+            background-color: #16191ca6;
             color: white;
             pointer-events: none;
             opacity: 0;
@@ -337,13 +337,26 @@
             width: 100%;
             height: 100%;
             @include flex (column, nowrap, center, center);
-            background-color: #16191c95;
+            padding: 0 1rem;
+            background-color: #16191ca6;
             color: white;
             pointer-events: none;
             opacity: 0;
             transition: 0.5s;
+            // No hover on touch screens: the title is always visible as a bottom bar
+            @include device (movil){
+                top: auto;
+                bottom: 0;
+                height: auto;
+                padding: 0.75rem 1rem;
+                background-color: #16191ccc;
+                font-size: 0.875rem;
+                line-height: 150%;
+                text-align: center;
+                opacity: 1;
+            }
         }
-        &:hover {
+        &:hover, &:focus-visible {
             .gallery__img{
                 transform: scale(1.2);
             }
@@ -502,6 +515,8 @@
 
 .social {
     overflow-x: hidden;
+    // Clips sideways only, so the chips above the icons stay visible
+    overflow-x: clip;
     width: 100%;
     @include flex (row, nowrap, center, center);
     padding-bottom: 5rem;
@@ -524,12 +539,25 @@
         gap: 2rem;
     }
     &__link {
+        position: relative;
         background-color: #16191C;
         padding: 2rem;
+        // Chip centered above the icon
+        .chip {
+            bottom: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%);
+            &:after {
+                left: 0;
+                right: 0;
+                top: 100%;
+                height: 0.5rem;
+            }
+        }
         opacity: 1;
         transition: 0.2s;
         &:hover{
-            background-color: #64babf;
+            background-color: #3f8f94;
             transform: scale(1.1);
         }
         @include device (movil){
