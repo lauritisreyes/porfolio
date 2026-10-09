@@ -234,6 +234,11 @@
         position: relative;
         transition: 0.5s;
     }
+    &__constellation {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
     &__title {
         color: grey;
         display: block;
@@ -282,7 +287,7 @@
                 opacity: 1;
             }
         }
-        &:nth-child(1) {
+        &.galleryexp__icons {
             grid-row-start: span 2;
             &:after {
                 content: 'Icon set and Guidelines - Figma Resource';
@@ -291,7 +296,7 @@
                 grid-row-start: span 1;
             }
         }
-        &:nth-child(2) {
+        &.galleryexp__underground {
             background-color:#ADD1D3;
             &:after {
                 content: 'Underground App - Personal Case Study';
@@ -302,7 +307,7 @@
                 color: green;
             }
         }
-        &:nth-child(3) {
+        &.galleryexp__units {
             background-color:#f2f3f6;
             &:after {
                 content: 'Units App - Available in the App Store';
@@ -312,19 +317,19 @@
                 object-fit: contain;
             }
         }
-        &:nth-child(4) {
+        &.galleryexp__prototypes {
             background-color:#f2f3f6;
             &:after {
                 content: 'Prototypes and explorations - Personal';
             }
         }
-        &:nth-child(5) {
+        &.galleryexp__floyd {
             &:after {
                 content: 'Pink Floyd (Illustrations) - Personal';
             }
         }
         
-        &:nth-child(6) {
+        &.galleryexp__sulcus {
             grid-column-start: span 1;
             &:after {
                 content: 'Sulcus Band (Graphic and motion design) - Professional';
@@ -333,7 +338,7 @@
                 grid-column-start: span 1;
             }
         }
-        &:nth-child(7) {
+        &.galleryexp__logotypes {
             background-color: #1B272C;
             &:after {
                 content: 'Freelance Music Projects - Professional';
@@ -342,7 +347,7 @@
                 object-fit: contain;
             }
         }
-        &:nth-child(8) {
+        &.galleryexp__atomic {
             background-color: #adbcd3;
             &:after {
                 content: 'Instagram UI kit - Figma Resource';
@@ -351,13 +356,19 @@
                 object-fit: contain;
             }
         }
-        &:nth-child(9) {
-            background-color: white;
+        &.galleryexp__palo {
+            background-color: #f2f3f6;
             &:after {
                 content: 'Palo App - Available in Google Play';
             }
             img {
                 object-fit: contain;
+            }
+        }
+        &.galleryexp__unverified {
+            background-color: #1e1e1e;
+            &:after {
+                content: 'Currently developing "Unverified Human"';
             }
         }
 

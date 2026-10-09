@@ -891,7 +891,7 @@ p b {
   content: 'Currently developing "Unverified Human"';
 }
 .gallery__palo {
-  background-color: white;
+  background-color: #f2f3f6;
 }
 .gallery__palo:after {
   content: "Palo App - Available in Google Play";
@@ -1392,6 +1392,11 @@ p b {
   position: relative;
   transition: 0.5s;
 }
+.galleryexp__constellation {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .galleryexp__title {
   color: grey;
   display: block;
@@ -1446,82 +1451,88 @@ p b {
 .galleryexp__item:hover:after {
   opacity: 1;
 }
-.galleryexp__item:nth-child(1) {
+.galleryexp__item.galleryexp__icons {
   grid-row-start: span 2;
 }
-.galleryexp__item:nth-child(1):after {
+.galleryexp__item.galleryexp__icons:after {
   content: "Icon set and Guidelines - Figma Resource";
 }
 @media (max-width: 900px) {
-  .galleryexp__item:nth-child(1) {
+  .galleryexp__item.galleryexp__icons {
     grid-row-start: span 1;
   }
 }
-.galleryexp__item:nth-child(2) {
+.galleryexp__item.galleryexp__underground {
   background-color: #ADD1D3;
 }
-.galleryexp__item:nth-child(2):after {
+.galleryexp__item.galleryexp__underground:after {
   content: "Underground App - Personal Case Study";
 }
-.galleryexp__item:nth-child(2) img {
+.galleryexp__item.galleryexp__underground img {
   object-fit: contain;
   color: green;
 }
-.galleryexp__item:nth-child(3) {
+.galleryexp__item.galleryexp__units {
   background-color: #f2f3f6;
 }
-.galleryexp__item:nth-child(3):after {
+.galleryexp__item.galleryexp__units:after {
   content: "Units App - Available in the App Store";
 }
-.galleryexp__item:nth-child(3) img {
+.galleryexp__item.galleryexp__units img {
   object-fit: contain;
 }
-.galleryexp__item:nth-child(4) {
+.galleryexp__item.galleryexp__prototypes {
   background-color: #f2f3f6;
 }
-.galleryexp__item:nth-child(4):after {
+.galleryexp__item.galleryexp__prototypes:after {
   content: "Prototypes and explorations - Personal";
 }
-.galleryexp__item:nth-child(5):after {
+.galleryexp__item.galleryexp__floyd:after {
   content: "Pink Floyd (Illustrations) - Personal";
 }
-.galleryexp__item:nth-child(6) {
+.galleryexp__item.galleryexp__sulcus {
   grid-column-start: span 1;
 }
-.galleryexp__item:nth-child(6):after {
+.galleryexp__item.galleryexp__sulcus:after {
   content: "Sulcus Band (Graphic and motion design) - Professional";
 }
 @media (max-width: 900px) {
-  .galleryexp__item:nth-child(6) {
+  .galleryexp__item.galleryexp__sulcus {
     grid-column-start: span 1;
   }
 }
-.galleryexp__item:nth-child(7) {
+.galleryexp__item.galleryexp__logotypes {
   background-color: #1B272C;
 }
-.galleryexp__item:nth-child(7):after {
+.galleryexp__item.galleryexp__logotypes:after {
   content: "Freelance Music Projects - Professional";
 }
-.galleryexp__item:nth-child(7) img {
+.galleryexp__item.galleryexp__logotypes img {
   object-fit: contain;
 }
-.galleryexp__item:nth-child(8) {
+.galleryexp__item.galleryexp__atomic {
   background-color: #adbcd3;
 }
-.galleryexp__item:nth-child(8):after {
+.galleryexp__item.galleryexp__atomic:after {
   content: "Instagram UI kit - Figma Resource";
 }
-.galleryexp__item:nth-child(8) img {
+.galleryexp__item.galleryexp__atomic img {
   object-fit: contain;
 }
-.galleryexp__item:nth-child(9) {
-  background-color: white;
+.galleryexp__item.galleryexp__palo {
+  background-color: #f2f3f6;
 }
-.galleryexp__item:nth-child(9):after {
+.galleryexp__item.galleryexp__palo:after {
   content: "Palo App - Available in Google Play";
 }
-.galleryexp__item:nth-child(9) img {
+.galleryexp__item.galleryexp__palo img {
   object-fit: contain;
+}
+.galleryexp__item.galleryexp__unverified {
+  background-color: #1e1e1e;
+}
+.galleryexp__item.galleryexp__unverified:after {
+  content: 'Currently developing "Unverified Human"';
 }
 .galleryexp.active .galleryexp__button {
   animation: opacity 1s ease 1 both;

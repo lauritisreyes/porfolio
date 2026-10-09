@@ -1,6 +1,6 @@
 // 🌌 Floating constellation (Obsidian-like graph) for the "Unverified Human" gallery item
 window.addEventListener('load', function () {
-    var canvas = document.querySelector('.gallery__constellation');
+    var canvas = document.querySelector('.constellation');
     if (!canvas) return;
 
     var ctx = canvas.getContext('2d');
